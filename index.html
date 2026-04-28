@@ -102,9 +102,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .detail-step .ds-text{flex:1;line-height:1.5;}
 .detail-step .ds-text strong{color:var(--text);}
 .detail-tip{background:#E2EEE8;padding:10px;border-radius:8px;font-size:0.82em;margin-top:8px;line-height:1.6;}
-/* VJW iframe area */
-.vjw-frame{width:100%;height:400px;border:2px solid var(--border);border-radius:10px;margin-top:10px;}
-.vjw-link-btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,#5B8DBE,#4A7BA8);color:#fff;text-align:center;border-radius:10px;text-decoration:none;font-weight:700;font-size:0.95em;margin-top:10px;}
 /* Add custom item */
 .add-custom-row{display:flex;gap:8px;margin-top:10px;}
 .add-custom-row input{flex:1;padding:8px 10px;border:2px solid var(--border);border-radius:8px;font-size:0.85em;outline:none;}
@@ -199,80 +196,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       ✅ <strong>공항 픽업 서비스 예약 완료!</strong><br>
       야간 도착 시간(22:40)과 6인 가족 짐 이동을 고려하여 <strong>트립닷컴 공항 픽업(중형 밴)</strong>으로 결정. 전철 막차 걱정 없이 숙소 앞까지 직행합니다.<br>
       <span style="font-size:0.85em;color:#555;">아래 다른 이동 수단은 참고용입니다.</span>
-    </div>
-
-    <div class="transport-option" id="arr-opt1">
-      <div class="transport-header" onclick="document.querySelector('#arr-opt1 input[type=radio]').checked=true;selectTransportOption('arrival','arr-opt1');">
-        <input type="radio" name="arrivalTransfer" value="rapid" onchange="selectTransportOption('arrival','arr-opt1')">
-        <div class="t-info">
-          <div class="t-name">🚃 난카이 라피트 (특급열차)</div>
-          <div class="t-summary">간사이공항 → 난바역 직통 특급</div>
-          <div class="transport-badges">
-            <span class="badge badge-time">⏱ 약 34분</span>
-            <span class="badge badge-cost">💰 1,290엔</span>
-            <span class="badge badge-easy">🟢 쉬움</span>
-          </div>
-        </div>
-        <button class="t-toggle">상세보기 ▼</button>
-      </div>
-      <div class="transport-detail" id="arr1-detail">
-        <div class="detail-step"><div class="ds-num">1</div><div class="ds-text"><strong>입국심사 & 수하물 수취</strong><br>도착 후 입국심사 → 수하물 수취 (약 30~40분)</div></div>
-        <div class="detail-step"><div class="ds-num">2</div><div class="ds-text"><strong>난카이 전철 개찰구로 이동</strong><br>도착 로비에서 <strong>"난카이(南海) 전철"</strong> 안내판 따라 2층으로 이동<br>에스컬레이터 올라가면 바로 매표소</div></div>
-        <div class="detail-step"><div class="ds-num">3</div><div class="ds-text"><strong>라피트 특급권 구매</strong><br>매표소 또는 자동발매기에서 <strong>"라피트(ラピート) 특급권"</strong> 구매<br>일반석 1,290엔 / 슈퍼시트 1,500엔<br>※ 공항급행(930엔, 45분)도 같은 플랫폼</div></div>
-        <div class="detail-step"><div class="ds-num">4</div><div class="ds-text"><strong>라피트 탑승</strong><br>파란색 독특한 디자인의 열차 탑승<br>전원 지정석, 넓은 좌석, 짐 보관 공간 있음</div></div>
-        <div class="detail-step"><div class="ds-num">5</div><div class="ds-text"><strong>난바역 도착</strong><br>약 34분 후 난바역 도착<br>3층 개찰구 나와서 출구로</div></div>
-        <div class="detail-step"><div class="ds-num">6</div><div class="ds-text"><strong>숙소까지 이동</strong><br>난바역 → 숙소(도톤보리 심사이바시)<br>🚶 도보 약 10~15분 또는 지하철 1정거장(난바→심사이바시)</div></div>
-        <div class="detail-tip"><strong>야간 주의:</strong> 라피트 막차는 약 22:45~23:10경. 22:40 도착 후 입국심사 시간 고려 시 막차 탑승이 어려울 수 있음. 사전에 막차 시간 확인 필수.</div>
-        <a href="https://www.google.com/maps/dir/Kansai+International+Airport/MA+Masters+Residence+Dotonbori+Shimanouchi+Shinsaibashi" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:10px;margin-top:8px;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85em;">지도에서 경로 보기 →</a>
-      </div>
-    </div>
-
-    <div class="transport-option" id="arr-opt2">
-      <div class="transport-header" onclick="document.querySelector('#arr-opt2 input[type=radio]').checked=true;selectTransportOption('arrival','arr-opt2');">
-        <input type="radio" name="arrivalTransfer" value="express" onchange="selectTransportOption('arrival','arr-opt2')">
-        <div class="t-info">
-          <div class="t-name">🚃 난카이 공항급행 (일반열차)</div>
-          <div class="t-summary">간사이공항 → 난바역 직통 일반열차</div>
-          <div class="transport-badges">
-            <span class="badge badge-time">⏱ 약 45분</span>
-            <span class="badge badge-cost">💰 930엔</span>
-            <span class="badge badge-easy">🟢 쉬움 · 저렴</span>
-          </div>
-        </div>
-        <button class="t-toggle">상세보기 ▼</button>
-      </div>
-      <div class="transport-detail" id="arr2-detail">
-        <div class="detail-step"><div class="ds-num">1</div><div class="ds-text"><strong>난카이 전철 개찰구 이동</strong><br>라피트와 동일한 경로 — 2층 난카이 전철 매표소</div></div>
-        <div class="detail-step"><div class="ds-num">2</div><div class="ds-text"><strong>공항급행 승차권 구매</strong><br>자동발매기에서 <strong>"난바(なんば)"</strong> 방면 930엔 구매<br>특급권 불필요 — 일반 승차권만으로 OK</div></div>
-        <div class="detail-step"><div class="ds-num">3</div><div class="ds-text"><strong>공항급행 탑승</strong><br>라피트와 같은 플랫폼, <strong>녹색 열차</strong>가 공항급행<br>자유석 — 빈 좌석에 앉으면 됨</div></div>
-        <div class="detail-step"><div class="ds-num">4</div><div class="ds-text"><strong>난바역 도착 → 숙소</strong><br>약 45분 후 난바역 도착 → 도보 10~15분</div></div>
-        <div class="detail-tip"><strong>야간 주의:</strong> 공항급행 막차는 약 23:30경. 라피트보다 늦게까지 운행하므로 야간 도착 시 유력한 대안.</div>
-        <a href="https://www.google.com/maps/dir/Kansai+International+Airport/MA+Masters+Residence+Dotonbori+Shimanouchi+Shinsaibashi" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:10px;margin-top:8px;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85em;">지도에서 경로 보기 →</a>
-      </div>
-    </div>
-
-    <div class="transport-option" id="arr-opt3">
-      <div class="transport-header" onclick="document.querySelector('#arr-opt3 input[type=radio]').checked=true;selectTransportOption('arrival','arr-opt3');">
-        <input type="radio" name="arrivalTransfer" value="bus" onchange="selectTransportOption('arrival','arr-opt3')">
-        <div class="t-info">
-          <div class="t-name">🚌 리무진버스</div>
-          <div class="t-summary">간사이공항 → 난바OCAT 직행</div>
-          <div class="transport-badges">
-            <span class="badge badge-time">⏱ 약 50분</span>
-            <span class="badge badge-cost">💰 1,600엔</span>
-            <span class="badge badge-easy">🟢 짐 많을 때 추천</span>
-          </div>
-        </div>
-        <button class="t-toggle">상세보기 ▼</button>
-      </div>
-      <div class="transport-detail" id="arr3-detail">
-        <div class="detail-step"><div class="ds-num">1</div><div class="ds-text"><strong>버스 매표소 이동</strong><br>도착 로비 1층 → <strong>"리무진버스(リムジンバス)"</strong> 안내판<br>8번 승강장 부근</div></div>
-        <div class="detail-step"><div class="ds-num">2</div><div class="ds-text"><strong>승차권 구매</strong><br>매표기 또는 카운터에서 <strong>"난바OCAT"</strong> 행 구매 (1,600엔)<br>어린이 800엔</div></div>
-        <div class="detail-step"><div class="ds-num">3</div><div class="ds-text"><strong>버스 탑승</strong><br>큰 짐은 하부 트렁크에 보관<br>전원 지정석, 에어컨 완비</div></div>
-        <div class="detail-step"><div class="ds-num">4</div><div class="ds-text"><strong>난바OCAT 도착 → 숙소</strong><br>약 50분 후 도착 → 숙소까지 도보 약 15분</div></div>
-        <div class="detail-tip"><strong>야간 주의:</strong> 리무진버스 막차는 약 22:00~22:30경으로 탑승 불가능할 가능성이 높습니다.</div>
-        <a href="https://www.google.com/maps/dir/Kansai+International+Airport/OCAT+Namba" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:10px;margin-top:8px;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85em;">지도에서 경로 보기 →</a>
-      </div>
     </div>
 
     <div class="transport-option" id="arr-opt4" style="border:2px solid #2E7D32;background:#F1F8F4;">
@@ -574,144 +497,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <textarea class="memo-area" id="hotelMemo" rows="4" placeholder="와이파이 비밀번호, 숙소 규칙, 호스트 연락처 등..." oninput="saveHotelMemo()" style="min-height:80px;"></textarea>
   </div>
 </div>
-
-<!-- ========== VJW ========== -->
-<div class="tab-content" id="tab-vjw">
-  <div class="card">
-    <div class="card-title">Visit Japan Web 등록 가이드</div>
-    <p style="font-size:0.85em;color:var(--text-light);margin-bottom:12px;">일본 입국 시 세관신고를 위한 사전 등록 사이트입니다. 출발 2주 전까지 등록을 완료하세요.</p>
-    <a href="https://www.vjw.digital.go.jp/" target="_blank" rel="noopener noreferrer" class="vjw-link-btn">🌐 Visit Japan Web 사이트 바로가기 →</a>
-  </div>
-
-  <div class="card">
-    <div class="card-title">단계별 등록 가이드</div>
-    <div style="font-size:0.82em;color:var(--text-light);margin-bottom:8px;">각 단계를 클릭하면 상세 안내 및 사이트 화면을 확인할 수 있습니다.</div>
-
-    <div class="step-item" style="cursor:pointer;" onclick="toggleVJWStep(1)">
-      <div class="step-number">1</div>
-      <div class="step-content">
-        <h4>회원가입 ▼</h4>
-        <p>이메일로 계정 생성</p>
-      </div>
-    </div>
-    <div id="vjw-step-1" style="display:none;padding:10px;background:#F8F9FA;border-radius:8px;margin-bottom:8px;">
-      <div style="font-size:0.85em;line-height:1.8;">
-        1. <a href="https://www.vjw.digital.go.jp/" target="_blank" rel="noopener noreferrer" style="color:var(--primary);">vjw.digital.go.jp</a> 접속<br>
-        2. <strong>"新規アカウント作成"</strong> (새 계정 만들기) 클릭<br>
-        3. 이메일 주소 입력 → 인증 메일 확인<br>
-        4. 비밀번호 설정 (영문+숫자+특수문자)<br>
-        5. 로그인 완료
-      </div>
-      <div style="background:#E6EEF6;padding:10px;border-radius:8px;margin-top:8px;font-size:0.82em;">
-        💡 한국어 지원됩니다. 우측 상단 언어 변경에서 🇰🇷 한국어 선택 가능
-      </div>
-      <a href="https://www.vjw.digital.go.jp/" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:10px;margin-top:8px;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85em;">사이트에서 직접 확인하기 →</a>
-    </div>
-
-    <div class="step-item" style="cursor:pointer;" onclick="toggleVJWStep(2)">
-      <div class="step-number">2</div>
-      <div class="step-content">
-        <h4>여행 일정 등록 ▼</h4>
-        <p>입국 정보 및 항공편 등록</p>
-      </div>
-    </div>
-    <div id="vjw-step-2" style="display:none;padding:10px;background:#F8F9FA;border-radius:8px;margin-bottom:8px;">
-      <div style="font-size:0.85em;line-height:1.8;">
-        1. 로그인 후 <strong>"本人の情報"</strong> (본인 정보) 메뉴<br>
-        2. <strong>"新規登録"</strong> (신규 등록) 클릭<br>
-        3. 항공편 정보 입력:<br>
-        &nbsp;&nbsp;• 도착편: <strong>KE737</strong> / 5월 1일<br>
-        &nbsp;&nbsp;• 도착공항: <strong>간사이국제공항 (KIX)</strong><br>
-        4. 숙박 정보 입력:<br>
-        &nbsp;&nbsp;• 주소: 1-chome-9-14 Shimanouchi, Chuo-ku, Osaka
-      </div>
-    </div>
-
-    <div class="step-item" style="cursor:pointer;" onclick="toggleVJWStep(3)">
-      <div class="step-number">3</div>
-      <div class="step-content">
-        <h4>본인 정보 등록 ▼</h4>
-        <p>여권 정보 입력</p>
-      </div>
-    </div>
-    <div id="vjw-step-3" style="display:none;padding:10px;background:#F8F9FA;border-radius:8px;margin-bottom:8px;">
-      <div style="font-size:0.85em;line-height:1.8;">
-        1. 여권 사진 촬영 후 업로드<br>
-        2. 여권 정보 자동 인식 (수동 입력 가능)<br>
-        &nbsp;&nbsp;• 성명 (영문)<br>
-        &nbsp;&nbsp;• 생년월일<br>
-        &nbsp;&nbsp;• 여권번호<br>
-        &nbsp;&nbsp;• 국적: Korea, Republic of<br>
-        3. 정보 확인 후 저장
-      </div>
-      <div style="background:#EDF3F9;padding:10px;border-radius:8px;margin-top:8px;font-size:0.82em;">
-        ⚠️ 여권 유효기간이 <strong>6개월 이상</strong> 남아있는지 반드시 확인하세요!
-      </div>
-    </div>
-
-    <div class="step-item" style="cursor:pointer;" onclick="toggleVJWStep(4)">
-      <div class="step-number">4</div>
-      <div class="step-content">
-        <h4>동반 가족 등록 (중요!) ▼</h4>
-        <p>가족 5명 각각 등록 필요</p>
-      </div>
-    </div>
-    <div id="vjw-step-4" style="display:none;padding:10px;background:#F8F9FA;border-radius:8px;margin-bottom:8px;">
-      <div style="font-size:0.85em;line-height:1.8;">
-        1. <strong>"同伴者の情報"</strong> (동반자 정보) 메뉴<br>
-        2. <strong>"同伴者を追加"</strong> (동반자 추가) 클릭<br>
-        3. 각 가족 구성원의 여권 정보 입력<br>
-        &nbsp;&nbsp;• 가족1: 성인(48세), 자녀(12세 여아)<br>
-        &nbsp;&nbsp;• 가족2: 성인(48세), 성인(43세), 자녀(14세 여아)<br>
-        4. <strong>미성년자도 각각 별도 등록</strong> 필요<br>
-        5. 총 5명 등록 완료 확인
-      </div>
-      <div style="background:#E2EEE8;padding:10px;border-radius:8px;margin-top:8px;font-size:0.82em;">
-        ✅ 동반 가족은 대표자 계정에서 함께 등록 가능. 가족 각각 별도 계정 불필요.
-      </div>
-    </div>
-
-    <div class="step-item" style="cursor:pointer;" onclick="toggleVJWStep(5)">
-      <div class="step-number">5</div>
-      <div class="step-content">
-        <h4>세관신고 작성 ▼</h4>
-        <p>반입 물품 신고</p>
-      </div>
-    </div>
-    <div id="vjw-step-5" style="display:none;padding:10px;background:#F8F9FA;border-radius:8px;margin-bottom:8px;">
-      <div style="font-size:0.85em;line-height:1.8;">
-        1. <strong>"携帯品・別送品申告"</strong> (세관신고) 메뉴<br>
-        2. 반입 물품 해당 여부 체크<br>
-        &nbsp;&nbsp;• 면세범위: 주류 3병(760ml), 담배 200개비, 향수 2온스<br>
-        &nbsp;&nbsp;• 해외 시가 합계 20만엔 이내<br>
-        3. 대부분 "아니오" 체크 후 제출<br>
-        4. 가족 단위로 1건 작성 가능
-      </div>
-    </div>
-
-    <div class="step-item" style="cursor:pointer;" onclick="toggleVJWStep(6)">
-      <div class="step-number">6</div>
-      <div class="step-content">
-        <h4>QR 코드 생성 ▼</h4>
-        <p>입국 시 제시할 QR 코드</p>
-      </div>
-    </div>
-    <div id="vjw-step-6" style="display:none;padding:10px;background:#F8F9FA;border-radius:8px;margin-bottom:8px;">
-      <div style="font-size:0.85em;line-height:1.8;">
-        1. 모든 등록 완료 후 QR코드 자동 생성<br>
-        2. <strong>"QRコードを表示"</strong> 버튼 클릭<br>
-        3. 📱 <strong>반드시 스크린샷 저장!</strong><br>
-        4. 입국심사 시 QR코드 제시<br>
-        5. 세관 통과 시에도 QR코드 제시
-      </div>
-      <div style="background:#F5E0E0;padding:10px;border-radius:8px;margin-top:8px;font-size:0.82em;">
-        🔴 <strong>필수!</strong> 와이파이가 없는 상황에서도 보여줄 수 있도록<br>
-        QR코드를 <strong>스크린샷으로 저장</strong>해두세요. 가족 전원분!
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- ========== 스토리 (여행 다이어리) ========== -->
 <div class="tab-content" id="tab-story">
   <div class="card">
@@ -849,7 +634,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <button class="nav-item" onclick="switchTab('food',this)"><span class="nav-icon">🍽️</span>맛집</button>
   <button class="nav-item" onclick="switchTab('japanese',this)"><span class="nav-icon">🗣️</span>회화</button>
   <button class="nav-item" onclick="switchTab('accommodation',this)"><span class="nav-icon">🏠</span>숙소</button>
-  <button class="nav-item" onclick="switchTab('vjw',this)"><span class="nav-icon">🌐</span>VJW</button>
   <button class="nav-item" onclick="switchTab('story',this)"><span class="nav-icon">📖</span>스토리</button>
   <button class="nav-item" onclick="switchTab('info',this)"><span class="nav-icon">📋</span>정보</button>
 </div>
@@ -879,8 +663,7 @@ const defaultCheckItems=[
   {id:'umbrella',label:'접이식 우산',cat:'기타'},
   {id:'sunglasses',label:'선글라스',cat:'기타'},
   {id:'bag',label:'보조 가방 (에코백)',cat:'기타'},
-  {id:'snack',label:'간식 / 물',cat:'기타'},
-  {id:'vjw',label:'Visit Japan Web 등록 완료',cat:'기타'}
+  {id:'snack',label:'간식 / 물',cat:'기타'}
 ];
 
 function getDefaultData(){return{checkItems:null,familyChecks:{1:{},2:{}},currentFamily:1,lastDayChecklist:{},schedule:{1:[],2:[],3:[],4:[],5:[],6:[]},photos:{1:[],2:[],3:[],4:[],5:[],6:[]},memos:{1:'',2:'',3:'',4:'',5:'',6:''},transfer:{arrival:'',departure:''},hotelMemo:'',extraMemo:'',currentDay:1};}
@@ -914,6 +697,17 @@ if(!appData._checkVer||appData._checkVer<CHECK_VERSION){
 }
 if(!appData.familyChecks)appData.familyChecks={1:{},2:{}};
 if(!appData.currentFamily)appData.currentFamily=1;
+const defaultLastDayItems=[
+  {id:'ld_passport',label:'여권 확인',cat:'소지품 확인'},
+  {id:'ld_charger',label:'충전기/어댑터 챙김',cat:'소지품 확인'},
+  {id:'ld_souvenir',label:'기념품 챙김',cat:'소지품 확인'},
+  {id:'ld_iccard',label:'교통카드 정리 (잔액 확인)',cat:'소지품 확인'},
+  {id:'ld_packing',label:'짐 정리 완료',cat:'숙소 정리'},
+  {id:'ld_trash',label:'숙소 쓰레기 분리/처리',cat:'숙소 정리'},
+  {id:'ld_fridge',label:'냉장고 확인 (남은 음식 정리)',cat:'숙소 정리'},
+  {id:'ld_key',label:'숙소 키 반납',cat:'숙소 정리'},
+  {id:'ld_checkout',label:'체크아웃 시간 확인',cat:'출발 전'}
+];
 // 마지막날 체크리스트도 카테고리 버전 체크
 if(!appData._lastDayVer||appData._lastDayVer<2){
   const oldLd=appData.lastDayChecklist||{};
@@ -926,17 +720,6 @@ if(!appData._lastDayVer||appData._lastDayVer<2){
 }
 if(!appData.lastDayItems)appData.lastDayItems=defaultLastDayItems.map(i=>({id:i.id,label:i.label,cat:i.cat}));
 if(!appData.lastDayFamilyChecks)appData.lastDayFamilyChecks={1:{},2:{}};
-const defaultLastDayItems=[
-  {id:'ld_passport',label:'여권 확인',cat:'소지품 확인'},
-  {id:'ld_charger',label:'충전기/어댑터 챙김',cat:'소지품 확인'},
-  {id:'ld_souvenir',label:'기념품 챙김',cat:'소지품 확인'},
-  {id:'ld_iccard',label:'교통카드 정리 (잔액 확인)',cat:'소지품 확인'},
-  {id:'ld_packing',label:'짐 정리 완료',cat:'숙소 정리'},
-  {id:'ld_trash',label:'숙소 쓰레기 분리/처리',cat:'숙소 정리'},
-  {id:'ld_fridge',label:'냉장고 확인 (남은 음식 정리)',cat:'숙소 정리'},
-  {id:'ld_key',label:'숙소 키 반납',cat:'숙소 정리'},
-  {id:'ld_checkout',label:'체크아웃 시간 확인',cat:'출발 전'}
-];
 const recommendedSpots=[
   {name:'도톤보리',icon:'🌉',cat:'sightseeing',time:'2~3시간'},
   {name:'오사카성',icon:'🏯',cat:'sightseeing',time:'2~3시간'},
@@ -1345,12 +1128,6 @@ function showPhraseCategory(c,el){
   document.querySelectorAll('#phraseTabs .sub-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');
   const list=document.getElementById('phraseList'),items=phrases[c]||[];
   list.innerHTML=items.map(p=>`<div class="phrase-card"><div class="phrase-ko">${p.ko}</div><div class="phrase-jp">${p.jp}</div><div class="phrase-pron">🔊 ${p.pron}</div></div>`).join('');
-}
-
-// ==== VJW Step Toggle ====
-function toggleVJWStep(n){
-  const el=document.getElementById('vjw-step-'+n);
-  if(el)el.style.display=el.style.display==='none'?'block':'none';
 }
 
 // ==== Story (다이어리) ====
