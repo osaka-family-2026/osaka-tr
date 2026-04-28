@@ -1,0 +1,1506 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>🇯🇵 오사카 가족여행 2026</title>
+<style>
+:root{--primary:#5B8DBE;--primary-dark:#4A7BA8;--secondary:#6BA3D6;--accent:#E8D98E;--bg:#F4F6F9;--card:#FFFFFF;--text:#333D47;--text-light:#6B7B8D;--success:#7BC4A8;--warning:#E0CC82;--danger:#CC8080;--border:#DCE3EB;--shadow:0 2px 8px rgba(50,80,120,0.06);--radius:12px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:80px;}
+.header{background:linear-gradient(135deg,#4A7BA8,#6BA3D6);color:#fff;padding:20px 16px 16px;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(75,120,170,0.25);}
+.header h1{font-size:1.3em;margin-bottom:4px;}.header p{font-size:0.85em;opacity:0.9;}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:6px 0 env(safe-area-inset-bottom,8px);box-shadow:0 -2px 10px rgba(0,0,0,0.1);z-index:100;overflow-x:auto;}
+.nav-item{display:flex;flex-direction:column;align-items:center;padding:4px 6px;font-size:0.6em;color:var(--text-light);cursor:pointer;border:none;background:none;min-width:48px;transition:color 0.2s;}
+.nav-item.active{color:var(--primary);}.nav-item .nav-icon{font-size:1.8em;margin-bottom:2px;}
+.tab-content{display:none;padding:16px;max-width:600px;margin:0 auto;}.tab-content.active{display:block;}
+.card{background:var(--card);border-radius:var(--radius);padding:16px;margin-bottom:12px;box-shadow:var(--shadow);}
+.card-title{font-size:1.1em;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.card-title .icon{font-size:1.2em;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 20px;border-radius:8px;border:none;font-size:0.9em;font-weight:600;cursor:pointer;transition:all 0.2s;}
+.btn-primary{background:var(--primary);color:#fff;}.btn-primary:hover{background:var(--primary-dark);}
+.btn-secondary{background:var(--secondary);color:#fff;}.btn-success{background:var(--success);color:#fff;}
+.btn-outline{background:transparent;color:var(--primary);border:2px solid var(--primary);}
+.btn-sm{padding:6px 12px;font-size:0.8em;}.btn-full{width:100%;}
+.checklist-item{display:flex;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);gap:10px;}
+.checklist-item:last-child{border-bottom:none;}
+.checklist-item input[type="checkbox"]{width:20px;height:20px;accent-color:var(--success);cursor:pointer;flex-shrink:0;}
+.checklist-item.checked label{text-decoration:line-through;color:var(--text-light);}
+.checklist-item .delete-custom{background:none;border:none;color:var(--danger);cursor:pointer;font-size:1em;padding:2px 6px;margin-left:auto;flex-shrink:0;}
+.day-tabs{display:flex;overflow-x:auto;gap:8px;padding:8px 0;margin-bottom:12px;}
+.day-tab{padding:8px 16px;border-radius:20px;border:2px solid var(--border);background:#fff;font-size:0.85em;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 0.2s;}
+.day-tab.active{background:var(--primary);color:#fff;border-color:var(--primary);}
+.recommend-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px;}
+.recommend-item{padding:10px;background:#F8F9FA;border-radius:8px;text-align:center;cursor:pointer;border:2px solid transparent;transition:all 0.2s;font-size:0.85em;}
+.recommend-item:hover{border-color:var(--primary);background:#EEF2F7;}
+.recommend-item .r-icon{font-size:1.5em;display:block;margin-bottom:4px;}
+.schedule-item{display:flex;align-items:center;padding:10px;margin-bottom:6px;background:#F8F9FA;border-radius:8px;gap:10px;}
+.schedule-item .s-time{font-weight:700;font-size:0.82em;color:var(--primary);min-width:50px;}
+.schedule-item .s-title{flex:1;font-size:0.9em;}
+.schedule-item .s-delete{background:none;border:none;color:var(--danger);cursor:pointer;font-size:1.1em;padding:4px;}
+.input-group{margin-bottom:12px;}
+.input-group label{display:block;font-size:0.85em;font-weight:600;margin-bottom:4px;color:var(--text-light);}
+.input-group input,.input-group textarea,.input-group select{width:100%;padding:10px 12px;border:2px solid var(--border);border-radius:8px;font-size:0.9em;outline:none;transition:border 0.2s;}
+.input-group input:focus,.input-group textarea:focus{border-color:var(--primary);}
+.status-banner{padding:12px;border-radius:8px;text-align:center;font-weight:700;margin-bottom:12px;}
+.status-complete{background:#D4EBE0;color:#3D7A50;}.status-incomplete{background:#E5ECF5;color:#4A6080;}
+.phrase-card{padding:12px;margin-bottom:8px;background:#F8F9FA;border-radius:10px;cursor:pointer;transition:background 0.2s;}
+.phrase-card:hover{background:#EDF2F7;}
+.phrase-ko{font-weight:700;font-size:1em;margin-bottom:4px;}.phrase-jp{color:var(--primary);font-size:0.95em;margin-bottom:2px;}.phrase-pron{color:var(--text-light);font-size:0.82em;}
+.restaurant-card{padding:12px;margin-bottom:8px;background:#F8F9FA;border-radius:10px;}
+.restaurant-card .r-name{font-weight:700;font-size:1em;margin-bottom:4px;}
+.restaurant-card .r-type{font-size:0.8em;color:var(--text-light);}
+.restaurant-card .r-price{font-size:0.82em;color:var(--primary);margin-top:4px;}
+.restaurant-card .r-menu{font-size:0.82em;color:var(--text-light);}
+.step-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);}
+.step-number{width:30px;height:30px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;}
+.step-content{flex:1;}.step-content h4{margin-bottom:4px;font-size:0.95em;}.step-content p{font-size:0.82em;color:var(--text-light);line-height:1.5;}
+.photo-upload{border:2px dashed var(--border);border-radius:10px;padding:20px;text-align:center;cursor:pointer;margin-top:8px;transition:border-color 0.2s;}
+.photo-upload:hover{border-color:var(--primary);}
+.photo-preview{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+.photo-preview img{width:80px;height:80px;object-fit:cover;border-radius:8px;}
+.story-day{padding:16px;margin-bottom:12px;background:linear-gradient(135deg,#EEF2F7,#FFF);border-radius:12px;border-left:4px solid var(--primary);}
+.story-day h3{color:var(--primary);margin-bottom:8px;}.story-day p{line-height:1.7;font-size:0.9em;}
+.clothing-item{display:flex;align-items:center;gap:10px;padding:8px 0;}.clothing-item .c-icon{font-size:1.5em;}
+.sub-tabs{display:flex;gap:8px;margin-bottom:12px;overflow-x:auto;}
+.sub-tab{padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:#fff;font-size:0.8em;cursor:pointer;white-space:nowrap;}
+.sub-tab.active{background:var(--secondary);color:#fff;border-color:var(--secondary);}
+.toolbar{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+.cat-header{font-size:0.9em;font-weight:700;color:var(--primary);margin:16px 0 8px;padding-bottom:4px;border-bottom:2px solid var(--primary);}
+.dday{display:inline-block;padding:4px 12px;background:var(--accent);color:#4A6080;border-radius:20px;font-weight:700;font-size:0.85em;margin-top:6px;}
+.weather-info{display:flex;justify-content:space-around;background:linear-gradient(135deg,#E2EEE8,#EFF3E8);padding:12px;border-radius:10px;margin-bottom:12px;}
+.weather-box{text-align:center;}.weather-box .temp{font-size:1.2em;font-weight:700;}.weather-box .label{font-size:0.75em;color:var(--text-light);}
+.area-btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+.area-btn{padding:6px 14px;border-radius:20px;border:2px solid var(--border);background:#fff;font-size:0.82em;cursor:pointer;transition:all 0.2s;}
+.area-btn.active{background:var(--primary);color:#fff;border-color:var(--primary);}
+.guide-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.guide-box{text-align:center;padding:16px 10px;background:#F8F9FA;border-radius:10px;}
+.guide-box .g-icon{font-size:2em;margin-bottom:6px;}.guide-box .g-title{font-weight:700;font-size:0.85em;margin-bottom:4px;}.guide-box .g-desc{font-size:0.75em;color:var(--text-light);}
+.progress-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin:8px 0;}
+.progress-fill{height:100%;background:var(--success);border-radius:3px;transition:width 0.3s;}
+.memo-area{width:100%;border:1px solid var(--border);border-radius:8px;padding:8px;font-size:0.85em;resize:vertical;min-height:50px;margin-top:6px;}
+.img-container{position:relative;display:inline-block;}
+.img-container .remove-img{position:absolute;top:-4px;right:-4px;background:var(--danger);color:#fff;border:none;border-radius:50%;width:20px;height:20px;font-size:0.7em;cursor:pointer;}
+/* Transport detail accordion */
+.transport-option{margin-bottom:10px;border:2px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color 0.2s;}
+.transport-option.selected{border-color:var(--primary);background:#EEF2F7;}
+.transport-header{display:flex;align-items:center;padding:12px;cursor:pointer;gap:10px;background:#fff;}
+.transport-header input[type="radio"]{accent-color:var(--primary);width:18px;height:18px;flex-shrink:0;}
+.transport-header .t-info{flex:1;}
+.transport-header .t-name{font-weight:700;font-size:0.95em;}
+.transport-header .t-summary{font-size:0.78em;color:var(--text-light);margin-top:2px;}
+.transport-badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;}
+.badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:0.72em;font-weight:600;}
+.badge-time{background:#DFE6E9;color:#2D3436;}.badge-cost{background:#E5ECF5;color:#4A6080;}
+.badge-easy{background:#D4EBE0;color:#3D7A50;}.badge-normal{background:#F0E4D0;color:#7A5500;}.badge-hard{background:#F0D8D8;color:#8B0000;}
+.transport-header .t-toggle{font-size:0.8em;color:var(--primary);padding:4px 10px;border:1px solid var(--primary);border-radius:6px;background:none;cursor:pointer;white-space:nowrap;}
+.transport-detail{display:none;padding:0 14px 14px;background:#FAFAFA;border-top:1px solid var(--border);}
+.transport-detail.open{display:block;}
+.detail-step{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #EEE;font-size:0.84em;}
+.detail-step:last-child{border-bottom:none;}
+.detail-step .ds-num{width:22px;height:22px;background:var(--secondary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75em;font-weight:700;flex-shrink:0;margin-top:2px;}
+.detail-step .ds-text{flex:1;line-height:1.5;}
+.detail-step .ds-text strong{color:var(--text);}
+.detail-tip{background:#E2EEE8;padding:10px;border-radius:8px;font-size:0.82em;margin-top:8px;line-height:1.6;}
+/* VJW iframe area */
+.vjw-frame{width:100%;height:400px;border:2px solid var(--border);border-radius:10px;margin-top:10px;}
+.vjw-link-btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,#5B8DBE,#4A7BA8);color:#fff;text-align:center;border-radius:10px;text-decoration:none;font-weight:700;font-size:0.95em;margin-top:10px;}
+/* Add custom item */
+.add-custom-row{display:flex;gap:8px;margin-top:10px;}
+.add-custom-row input{flex:1;padding:8px 10px;border:2px solid var(--border);border-radius:8px;font-size:0.85em;outline:none;}
+.add-custom-row input:focus{border-color:var(--primary);}
+.add-custom-row button{padding:8px 14px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer;white-space:nowrap;}
+/* Flight info display */
+.flight-card{background:linear-gradient(135deg,#E6EEF6,#EDF2F8);border-radius:12px;padding:16px;margin-bottom:10px;}
+.flight-route{display:flex;align-items:center;justify-content:space-between;margin:10px 0;}
+.flight-airport{text-align:center;}
+.flight-airport .code{font-size:1.3em;font-weight:700;color:var(--primary);}
+.flight-airport .name{font-size:0.72em;color:var(--text-light);}
+.flight-airport .time{font-size:1.1em;font-weight:600;margin-top:2px;}
+.flight-line{flex:1;text-align:center;padding:0 10px;}
+.flight-line .plane{font-size:1.5em;}
+.flight-line .duration{font-size:0.75em;color:var(--text-light);}
+.info-row{display:flex;justify-content:space-between;font-size:0.82em;padding:4px 0;border-bottom:1px solid rgba(0,0,0,0.05);}
+.info-row:last-child{border-bottom:none;}
+.info-label{color:var(--text-light);}.info-value{font-weight:600;}
+::-webkit-scrollbar{width:4px;height:4px;}::-webkit-scrollbar-thumb{background:#CCC;border-radius:2px;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🇯🇵 오사카 가족여행</h1>
+  <p>2026.05.01 ~ 05.06 | 5박 6일 | 6명</p>
+  <div class="dday" id="ddayBadge"></div>
+</div>
+
+<!-- ========== 홈 ========== -->
+<div class="tab-content active" id="tab-home">
+  <div class="card">
+    <div class="card-title">여행 개요</div>
+    <div style="font-size:0.9em;line-height:1.8;">
+      <strong>여행지:</strong> 일본 오사카<br>
+      <strong>일정:</strong> 2026년 5월 1일(금) ~ 5월 6일(수) · 5박 6일<br>
+      <strong>인원:</strong> 총 6명 (성인 4명, 자녀 2명)<br>
+      <strong>숙소:</strong> MA Masters Residence 도톤보리 심사이바시
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">항공 요약</div>
+    <div class="flight-card">
+      <div style="font-size:0.78em;font-weight:600;color:var(--text-light);margin-bottom:4px;">🛫 출발 · 5월 1일(금) · KE737 (야간편)</div>
+      <div class="flight-route">
+        <div class="flight-airport"><div class="code">ICN</div><div class="name">인천 T1</div><div class="time">20:50</div></div>
+        <div class="flight-line"><div class="plane">✈️</div><div class="duration">1시간 50분</div></div>
+        <div class="flight-airport"><div class="code">KIX</div><div class="name">간사이 T1</div><div class="time">22:40</div></div>
+      </div>
+    </div>
+    <div class="flight-card">
+      <div style="font-size:0.78em;font-weight:600;color:var(--text-light);margin-bottom:4px;">🛬 귀국 · 5월 6일(수) · KE1174</div>
+      <div class="flight-route">
+        <div class="flight-airport"><div class="code">UKB</div><div class="name">고베 T1</div><div class="time">18:55</div></div>
+        <div class="flight-line"><div class="plane">✈️</div><div class="duration">1시간 55분</div></div>
+        <div class="flight-airport"><div class="code">ICN</div><div class="name">인천 T1</div><div class="time">20:50</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">5월 오사카 날씨</div>
+    <div class="weather-info">
+      <div class="weather-box"><div class="temp">☀️ 23~25°</div><div class="label">낮 최고</div></div>
+      <div class="weather-box"><div class="temp">🌙 14~16°</div><div class="label">밤 최저</div></div>
+      <div class="weather-box"><div class="temp">💧 낮음</div><div class="label">강수확률</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">준비 현황</div>
+    <div style="font-size:0.82em;font-weight:600;margin-bottom:4px;">🏠 현주네 준비물</div>
+    <div style="display:flex;justify-content:space-between;font-size:0.82em;"><span></span><span id="homeCheck1Rate">0%</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="homeCheck1Bar" style="width:0%"></div></div>
+    <div style="font-size:0.82em;font-weight:600;margin:8px 0 4px;">🏡 하은이네 준비물</div>
+    <div style="display:flex;justify-content:space-between;font-size:0.82em;"><span></span><span id="homeCheck2Rate">0%</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="homeCheck2Bar" style="width:0%;background:#7B9ABF;"></div></div>
+    <div style="display:flex;justify-content:space-between;font-size:0.85em;margin-top:10px;"><span>📅 일정 등록</span><span id="homePlanRate">0일/6일</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="homePlanBar" style="width:0%"></div></div>
+  </div>
+  <div class="toolbar">
+    <button class="btn btn-outline btn-sm" onclick="exportData()">📥 데이터 내보내기</button>
+    <button class="btn btn-outline btn-sm" onclick="document.getElementById('importFile').click()">📤 데이터 가져오기</button>
+    <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)">
+  </div>
+</div>
+
+<!-- ========== 공항이동 ========== -->
+<div class="tab-content" id="tab-airport">
+  <div class="card">
+    <div class="card-title">도착 : 간사이공항(KIX) → 숙소</div>
+    <p style="font-size:0.82em;color:var(--text-light);margin-bottom:10px;">5/1 <strong>22:40</strong> 야간 도착 → 입국심사/수하물 약 30~40분 → <strong>23:10</strong> 픽업 출발<br>숙소: 도톤보리 심사이바시</p>
+    <div style="background:#E8F5E9;padding:12px;border-radius:8px;margin-bottom:10px;font-size:0.88em;border-left:4px solid #2E7D32;">
+      ✅ <strong>공항 픽업 서비스 예약 완료!</strong><br>
+      야간 도착 시간(22:40)과 6인 가족 짐 이동을 고려하여 <strong>트립닷컴 공항 픽업(중형 밴)</strong>으로 결정. 전철 막차 걱정 없이 숙소 앞까지 직행합니다.<br>
+      <span style="font-size:0.85em;color:#555;">아래 다른 이동 수단은 참고용입니다.</span>
+    </div>
+
+    <div class="transport-option" id="arr-opt1">
+      <div class="transport-header" onclick="document.querySelector('#arr-opt1 input[type=radio]').checked=true;selectTransportOption('arrival','arr-opt1');">
+        <input type="radio" name="arrivalTransfer" value="rapid" onchange="selectTransportOption('arrival','arr-opt1')">
+        <div class="t-info">
+          <div class="t-name">🚃 난카이 라피트 (특급열차)</div>
+          <div class="t-summary">간사이공항 → 난바역 직통 특급</div>
+          <div class="transport-badges">
+            <span class="badge badge-time">⏱ 약 34분</span>
+            <span class="badge badge-cost">💰 1,290엔</span>
+            <span class="badge badge-easy">🟢 쉬움</span>
+          </div>
+        </div>
+        <button class="t-toggle">상세보기 ▼</button>
+      </div>
+      <div class="transport-detail" id="arr1-detail">
+        <div class="detail-step"><div class="ds-num">1</div><div class="ds-text"><strong>입국심사 & 수하물 수취</strong><br>도착 후 입국심사 → 수하물 수취 (약 30~40분)</div></div>
+        <div class="detail-step"><div class="ds-num">2</div><div class="ds-text"><strong>난카이 전철 개찰구로 이동</strong><br>도착 로비에서 <strong>"난카이(南海) 전철"</strong> 안내판 따라 2층으로 이동<br>에스컬레이터 올라가면 바로 매표소</div></div>
+        <div class="detail-step"><div class="ds-num">3</div><div class="ds-text"><strong>라피트 특급권 구매</strong><br>매표소 또는 자동발매기에서 <strong>"라피트(ラピート) 특급권"</strong> 구매<br>일반석 1,290엔 / 슈퍼시트 1,500엔<br>※ 공항급행(930엔, 45분)도 같은 플랫폼</div></div>
+        <div class="detail-step"><div class="ds-num">4</div><div class="ds-text"><strong>라피트 탑승</strong><br>파란색 독특한 디자인의 열차 탑승<br>전원 지정석, 넓은 좌석, 짐 보관 공간 있음</div></div>
+        <div class="detail-step"><div class="ds-num">5</div><div class="ds-text"><strong>난바역 도착</strong><br>약 34분 후 난바역 도착<br>3층 개찰구 나와서 출구로</div></div>
+        <div class="detail-step"><div class="ds-num">6</div><div class="ds-text"><strong>숙소까지 이동</strong><br>난바역 → 숙소(도톤보리 심사이바시)<br>🚶 도보 약 10~15분 또는 지하철 1정거장(난바→심사이바시)</div></div>
+        <div class="detail-tip"><strong>야간 주의:</strong> 라피트 막차는 약 22:45~23:10경. 22:40 도착 후 입국심사 시간 고려 시 막차 탑승이 어려울 수 있음. 사전에 막차 시간 확인 필수.</div>
+        <a href="https://www.google.com/maps/dir/Kansai+International+Airport/MA+Masters+Residence+Dotonbori+Shimanouchi+Shinsaibashi" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:10px;margin-top:8px;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85em;">지도에서 경로 보기 →</a>
+      </div>
+    </div>
+
+    <div class="transport-option" id="arr-opt2">
+      <div class="transport-header" onclick="document.querySelector('#arr-opt2 input[type=radio]').checked=true;selectTransportOption('arrival','arr-opt2');">
+        <input type="radio" name="arrivalTransfer" value="express" onchange="selectTransportOption('arrival','arr-opt2')">
+        <div class="t-info">
+          <div class="t-name">🚃 난카이 공항급행 (일반열차)</div>
+          <div class="t-summary">간사이공항 → 난바역 직통 일반열차</div>
+          <div class="transport-badges">
+            <span class="badge badge-time">⏱ 약 45분</span>
+            <span class="badge badge-cost">💰 930엔</span>
+            <span class="badge badge-easy">🟢 쉬움 · 저렴</span>
+          </div>
+        </div>
+        <button class="t-toggle">상세보기 ▼</button>
+      </div>
+      <div class="transport-detail" id="arr2-detail">
+        <div class="detail-step"><div class="ds-num">1</div><div class="ds-text"><strong>난카이 전철 개찰구 이동</strong><br>라피트와 동일한 경로 — 2층 난카이 전철 매표소</div></div>
+        <div class="detail-step"><div class="ds-num">2</div><div class="ds-text"><strong>공항급행 승차권 구매</strong><br>자동발매기에서 <strong>"난바(なんば)"</strong> 방면 930엔 구매<br>특급권 불필요 — 일반 승차권만으로 OK</div></div>
+        <div class="detail-step"><div class="ds-num">3</div><div class="ds-text"><strong>공항급행 탑승</strong><br>라피트와 같은 플랫폼, <strong>녹색 열차</strong>가 공항급행<br>자유석 — 빈 좌석에 앉으면 됨</div></div>
+        <div class="detail-step"><div class="ds-num">4</div><div class="ds-text"><strong>난바역 도착 → 숙소</strong><br>약 45분 후 난바역 도착 → 도보 10~15분</div></div>
+        <div class="detail-tip"><strong>야간 주의:</strong> 공항급행 막차는 약 23:30경. 라피트보다 늦게까지 운행하므로 야간 도착 시 유력한 대안.</div>
+        <a href="https://www.google.com/maps/dir/Kansai+International+Airport/MA+Masters+Residence+Dotonbori+Shimanouchi+Shinsaibashi" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:10px;margin-top:8px;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85em;">지도에서 경로 보기 →</a>
+      </div>
+    </div>
+
+    <div class="transport-option" id="arr-opt3">
+      <div class="transport-header" onclick="document.querySelector('#arr-opt3 input[type=radio]').checked=true;selectTransportOption('arrival','arr-opt3');">
+        <input type="radio" name="arrivalTransfer" value="bus" onchange="selectTransportOption('arrival','arr-opt3')">
+        <div class="t-info">
+          <div class="t-name">🚌 리무진버스</div>
+          <div class="t-summary">간사이공항 → 난바OCAT 직행</div>
+          <div class="transport-badges">
+            <span class="badge badge-time">⏱ 약 50분</span>
+            <span class="badge badge-cost">💰 1,600엔</span>
+            <span class="badge badge-easy">🟢 짐 많을 때 추천</span>
+          </div>
+        </div>
+        <button class="t-toggle">상세보기 ▼</button>
+      </div>
+      <div class="transport-detail" id="arr3-detail">
+        <div class="detail-step"><div class="ds-num">1</div><div class="ds-text"><strong>버스 매표소 이동</strong><br>도착 로비 1층 → <strong>"리무진버스(リムジンバス)"</strong> 안내판<br>8번 승강장 부근</div></div>
+        <div class="detail-step"><div class="ds-num">2</div><div class="ds-text"><strong>승차권 구매</strong><br>매표기 또는 카운터에서 <strong>"난바OCAT"</strong> 행 구매 (1,600엔)<br>어린이 800엔</div></div>
+        <div class="detail-step"><div class="ds-num">3</div><div class="ds-text"><strong>버스 탑승</strong><br>큰 짐은 하부 트렁크에 보관<br>전원 지정석, 에어컨 완비</div></div>
+        <div class="detail-step"><div class="ds-num">4</div><div class="ds-text"><strong>난바OCAT 도착 → 숙소</strong><br>약 50분 후 도착 → 숙소까지 도보 약 15분</div></div>
+        <div class="detail-tip"><strong>야간 주의:</strong> 리무진버스 막차는 약 22:00~22:30경으로 탑승 불가능할 가능성이 높습니다.</div>
+        <a href="https://www.google.com/maps/dir/Kansai+International+Airport/OCAT+Namba" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:10px;margin-top:8px;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85em;">지도에서 경로 보기 →</a>
+      </div>
+    </div>
+
+    <div class="transport-option" id="arr-opt4" style="border:2px solid #2E7D32;background:#F1F8F4;">
+      <div class="transport-header" onclick="document.querySelector('#arr-opt4 input[type=radio]').checked=true;selectTransportOption('arrival','arr-opt4');">
+        <input type="radio" name="arrivalTransfer" value="pickup" checked onchange="selectTransportOption('arrival','arr-opt4')">
+        <div class="t-info">
+          <div class="t-name">✅ 공항 픽업 서비스 (트립닷컴) <span style="font-size:0.75em;background:#2E7D32;color:#fff;padding:2px 8px;border-radius:10px;margin-left:4px;">예약 확정</span></div>
+          <div class="t-summary">중형 밴 · KIX T1 → 숙소 직행 · 50분</div>
+          <div class="transport-badges">
+            <span class="badge badge-time">⏱ 약 50분 / 49km</span>
+            <span class="badge badge-cost">💰 182,736원 (결제완료)</span>
+            <span class="badge badge-easy">🟢 6인 가족 + 짐</span>
+          </div>
+        </div>
+        <button class="t-toggle">상세보기 ▼</button>
+      </div>
+      <div class="transport-detail" id="arr4-detail">
+        <!-- 예약 확정 정보 박스 -->
+        <div style="font-size:0.88em;margin-bottom:12px;padding:14px;background:#fff;border-radius:10px;border:2px solid #2E7D32;">
+          <div style="font-weight:700;color:#2E7D32;margin-bottom:10px;font-size:1em;">📋 예약 확정 내역</div>
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:0.92em;">
+            <div style="color:#666;">서비스</div><div><strong>트립닷컴 공항 픽업 (Trip.com Transfers)</strong></div>
+            <div style="color:#666;">차량</div><div>중형 밴 (MPV) · 최대 6명 / 캐리어 4개</div>
+            <div style="color:#666;">픽업 일시</div><div><strong>2026년 5월 1일 (금) 23:10</strong> <span style="font-size:0.85em;color:#888;">(도착 30분 후)</span></div>
+            <div style="color:#666;">픽업 장소</div><div>간사이 국제공항 <strong>제1터미널 (T1)</strong></div>
+            <div style="color:#666;">도착 장소</div><div>MA Masters Residence Dotonbori<br><span style="font-size:0.85em;color:#666;">(2-chōme-9-14 Shimanouchi)</span></div>
+            <div style="color:#666;">예상 소요</div><div><strong>약 50분 / 49km</strong></div>
+            <div style="color:#666;">항공편 연동</div><div>KE737 · 5/1 22:40 도착</div>
+            <div style="color:#666;">결제 금액</div><div><strong style="color:var(--primary);font-size:1.05em;">182,736원</strong> (결제 완료)</div>
+            <div style="color:#666;">무료 취소</div><div style="color:#D32F2F;"><strong>5월 1일 11:10 까지</strong></div>
+            <div style="color:#666;">대기 시간</div><div>✅ 무제한 무료 대기 (입국심사 지연 OK)</div>
+          </div>
+        </div>
+
+        <div style="font-size:0.84em;margin-bottom:10px;padding:8px;background:#E6EEF6;border-radius:8px;">
+          <strong>포함 서비스:</strong> 공항 미팅 & 피켓 서비스, 수하물 도움, 무제한 무료 대기, 도어투도어 픽업
+        </div>
+
+        <div class="detail-step"><div class="ds-num">1</div><div class="ds-text"><strong>입국심사 & 수하물 수취</strong><br>5/1 22:40 도착 → 입국심사 → 수하물 수취 (약 30분)</div></div>
+        <div class="detail-step"><div class="ds-num">2</div><div class="ds-text"><strong>도착 로비에서 기사님 미팅</strong><br>제1터미널(T1) 도착 로비에서 <strong>피켓 들고 대기 중인 기사님</strong> 찾기<br>※ 기사 연락처는 출발 전 트립닷컴 앱/메일로 발송됨</div></div>
+        <div class="detail-step"><div class="ds-num">3</div><div class="ds-text"><strong>차량 탑승 & 숙소 이동</strong><br>중형 밴에 짐 적재 → 23:10 출발 → 약 50분 후 숙소 도착<br>예상 도착: <strong>5/2 00:00 ~ 00:10</strong></div></div>
+        <div class="detail-step"><div class="ds-num">4</div><div class="ds-text"><strong>숙소 도착</strong><br>MA Masters Residence Dotonbori 정문 하차</div></div>
+
+        <div class="detail-tip">
+          <strong>💡 당일 체크리스트</strong><br>
+          • 트립닷컴 앱에서 <strong>기사님 연락처/차량번호</strong> 사전 확인<br>
+          • 도착 후 비행기 지연 시 자동 추적되니 안심<br>
+          • 피켓에 적힌 이름 확인 (예약자 이름)<br>
+          • 변경/취소가 필요하면 <strong>5/1 11:10 이전</strong>에 트립닷컴에서 처리
+        </div>
+        <a href="https://www.google.com/maps/dir/Kansai+International+Airport/MA+Masters+Residence+Dotonbori+Shimanouchi+Shinsaibashi" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:10px;margin-top:8px;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85em;">지도에서 경로 보기 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 귀국편: 고베공항 -->
+  <div class="card">
+    <div class="card-title">귀국 : 숙소 → 고베공항(UKB)</div>
+    <div style="background:#EDF3F9;padding:10px;border-radius:8px;margin-bottom:10px;font-size:0.85em;">
+      ⚠️ <strong>주의!</strong> 귀국편은 간사이공항이 아닌 <strong>고베공항(UKB)</strong>입니다.<br>
+      항공편: KE1174 18:55 출발 → 최소 <strong>16:55까지</strong> 공항 도착 권장<br>
+      체크아웃 11:00 → 여유 시간 활용 후 이동
+    </div>
+
+    <div class="transport-option" id="dep-opt1">
+      <div class="transport-header" onclick="document.querySelector('#dep-opt1 input[type=radio]').checked=true;selectTransportOption('departure','dep-opt1');">
+        <input type="radio" name="departureTransfer" value="train" onchange="selectTransportOption('departure','dep-opt1')">
+        <div class="t-info">
+          <div class="t-name">🚃 지하철 + JR + 포트라이너</div>
+          <div class="t-summary">난바 → 산노미야 → 고베공항</div>
+          <div class="transport-badges">
+            <span class="badge badge-time">⏱ 약 70~80분</span>
+            <span class="badge badge-cost">💰 약 1,300~1,500엔</span>
+            <span class="badge badge-normal">🟡 보통 (환승 있음)</span>
+          </div>
+        </div>
+        <button class="t-toggle">상세보기 ▼</button>
+      </div>
+      <div class="transport-detail" id="dep1-detail">
+        <div class="detail-step"><div class="ds-num">1</div><div class="ds-text"><strong>난바역 → 우메다역</strong><br>지하철 미도스지선(御堂筋線) 탑승<br>난바(なんば) → 우메다(梅田) 약 10분, 280엔</div></div>
+        <div class="detail-step"><div class="ds-num">2</div><div class="ds-text"><strong>우메다/오사카역 → 산노미야역</strong><br>JR 쾌속(新快速) 탑승<br>오사카(大阪)역 → 산노미야(三ノ宮)역 약 21분, 420엔<br>※ 또는 한큐전철 우메다→산노미야 약 27분, 330엔</div></div>
+        <div class="detail-step"><div class="ds-num">3</div><div class="ds-text"><strong>산노미야역 → 포트라이너 환승</strong><br>JR 산노미야역에서 나와 <strong>"포트라이너(ポートライナー)"</strong> 표지판 따라 이동<br>도보 약 5분</div></div>
+        <div class="detail-step"><div class="ds-num">4</div><div class="ds-text"><strong>포트라이너 탑승</strong><br>산노미야 → <strong>고베공항(神戸空港)</strong>역 약 18분, 340엔<br>전자동 무인열차, 매 10분 간격</div></div>
+        <div class="detail-step"><div class="ds-num">5</div><div class="ds-text"><strong>고베공항 도착</strong><br>역에서 공항 터미널까지 도보 1분</div></div>
+        <div class="detail-tip"><strong>권장 출발시간:</strong> 15:00~15:30 숙소 출발 → 16:30~16:50 공항 도착. 환승 2회이지만 안내판 잘 되어 있음.</div>
+        <a href="https://www.google.com/maps/dir/MA+Masters+Residence+Dotonbori+Shimanouchi+Shinsaibashi/Kobe+Airport" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:10px;margin-top:8px;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85em;">지도에서 경로 보기 →</a>
+      </div>
+    </div>
+
+    <div class="transport-option" id="dep-opt2">
+      <div class="transport-header" onclick="document.querySelector('#dep-opt2 input[type=radio]').checked=true;selectTransportOption('departure','dep-opt2');">
+        <input type="radio" name="departureTransfer" value="direct-train" onchange="selectTransportOption('departure','dep-opt2')">
+        <div class="t-info">
+          <div class="t-name">🚃 한신전철 직통 + 포트라이너</div>
+          <div class="t-summary">난바 → 산노미야 직통(환승 1회 줄임)</div>
+          <div class="transport-badges">
+            <span class="badge badge-time">⏱ 약 70분</span>
+            <span class="badge badge-cost">💰 약 1,050엔</span>
+            <span class="badge badge-easy">🟢 환승 적음</span>
+          </div>
+        </div>
+        <button class="t-toggle">상세보기 ▼</button>
+      </div>
+      <div class="transport-detail" id="dep2-detail">
+        <div class="detail-step"><div class="ds-num">1</div><div class="ds-text"><strong>난바역 → 산노미야역 (한신 직통)</strong><br>지하철 난바역에서 <strong>한신(阪神) 난바선</strong> 탑승<br>산노미야(神戸三宮) 직통 약 40분, 410엔<br>※ 환승 없이 직통으로 가능!</div></div>
+        <div class="detail-step"><div class="ds-num">2</div><div class="ds-text"><strong>산노미야역 → 포트라이너</strong><br>한신 산노미야역에서 나와 포트라이너로 환승<br>도보 약 5분</div></div>
+        <div class="detail-step"><div class="ds-num">3</div><div class="ds-text"><strong>포트라이너 → 고베공항</strong><br>약 18분, 340엔 → 공항 도착</div></div>
+        <div class="detail-tip"><strong>팁:</strong> 한신전철은 난바에서 산노미야까지 직통! 환승이 1회만 필요해서 가장 편리한 대중교통 옵션.</div>
+        <a href="https://www.google.com/maps/dir/MA+Masters+Residence+Dotonbori+Shimanouchi+Shinsaibashi/Kobe+Airport" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:10px;margin-top:8px;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85em;">지도에서 경로 보기 →</a>
+      </div>
+    </div>
+
+    <div class="transport-option" id="dep-opt3">
+      <div class="transport-header" onclick="document.querySelector('#dep-opt3 input[type=radio]').checked=true;selectTransportOption('departure','dep-opt3');">
+        <input type="radio" name="departureTransfer" value="pickup-kobe" onchange="selectTransportOption('departure','dep-opt3')">
+        <div class="t-info">
+          <div class="t-name">공항 샌딩 서비스 (트립닷컴)</div>
+          <div class="t-summary">숙소 → 고베공항 직행 / 짐 걱정 없이</div>
+          <div class="transport-badges">
+            <span class="badge badge-time">약 50~60분</span>
+            <span class="badge badge-cost">트립닷컴 예약</span>
+            <span class="badge badge-easy">편리함</span>
+          </div>
+        </div>
+        <button class="t-toggle">상세보기 ▼</button>
+      </div>
+      <div class="transport-detail" id="dep3-detail">
+        <div class="detail-step"><div class="ds-num">1</div><div class="ds-text"><strong>트립닷컴 앱 → 공항 샌딩 예약</strong><br>오사카(숙소) → 고베공항(UKB) 구간 검색 후 차량 선택</div></div>
+        <div class="detail-step"><div class="ds-num">2</div><div class="ds-text"><strong>숙소 앞에서 탑승</strong><br>예약 시간에 기사님 도착 → 짐 싣고 출발</div></div>
+        <div class="detail-step"><div class="ds-num">3</div><div class="ds-text"><strong>고베공항 도착</strong><br>약 50~60분 소요 → 터미널 앞 하차</div></div>
+        <div class="detail-tip"><strong>짐이 많은 귀국일에 추천.</strong> 환승 없이 숙소→고베공항 직행. 트립닷컴에서 예약 가능.</div>
+        <a href="https://www.google.com/maps/dir/MA+Masters+Residence+Dotonbori+Shimanouchi+Shinsaibashi/Kobe+Airport" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:10px;margin-top:8px;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85em;">지도에서 경로 보기 →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 준비물 ========== -->
+<div class="tab-content" id="tab-checklist">
+  <!-- 가족별 진행 현황 -->
+  <div class="card">
+    <div class="card-title">가족별 준비 현황</div>
+    <div style="display:flex;gap:12px;">
+      <div style="flex:1;background:#E8F0F8;padding:10px;border-radius:10px;text-align:center;">
+        <div style="font-weight:700;font-size:0.9em;">🏠 현주네</div>
+        <div class="progress-bar" style="margin:6px 0;"><div class="progress-fill" id="family1Bar" style="width:0%;background:var(--primary);"></div></div>
+        <div style="font-size:0.82em;font-weight:600;" id="family1Rate">0%</div>
+      </div>
+      <div style="flex:1;background:#E8EFF8;padding:10px;border-radius:10px;text-align:center;">
+        <div style="font-weight:700;font-size:0.9em;">🏡 하은이네</div>
+        <div class="progress-bar" style="margin:6px 0;"><div class="progress-fill" id="family2Bar" style="width:0%;background:#7B9ABF;"></div></div>
+        <div style="font-size:0.82em;font-weight:600;" id="family2Rate">0%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">준비물 체크리스트</div>
+    <!-- 가족 선택 탭 -->
+    <div style="display:flex;margin-bottom:12px;border-radius:10px;overflow:hidden;border:2px solid var(--border);">
+      <button id="familyTab1" class="family-tab active" onclick="switchFamily(1)" style="flex:1;padding:10px;border:none;font-weight:700;font-size:0.9em;cursor:pointer;background:var(--primary);color:#fff;transition:all 0.2s;">🏠 현주네</button>
+      <button id="familyTab2" class="family-tab" onclick="switchFamily(2)" style="flex:1;padding:10px;border:none;font-weight:700;font-size:0.9em;cursor:pointer;background:#fff;color:var(--text);transition:all 0.2s;">🏡 하은이네</button>
+    </div>
+    <div id="essentialChecklist"></div>
+    <div style="margin-top:12px;padding-top:10px;border-top:2px dashed var(--border);">
+      <div class="add-custom-row">
+        <input type="text" id="customCheckItem" placeholder="준비물 추가 입력..." onkeydown="if(event.key==='Enter')addCustomCheckItem()">
+        <button onclick="addCustomCheckItem()">➕ 추가</button>
+      </div>
+      <div style="font-size:0.72em;color:var(--text-light);margin-top:6px;">추가한 항목은 현주네·하은이네 모두에게 표시됩니다 · ✕로 삭제 가능</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">의류 추천 (5월 오사카)</div>
+    <div class="clothing-item"><span class="c-icon">👕</span><div><strong>반팔 + 얇은 겉옷</strong><br><span style="font-size:0.82em;color:var(--text-light);">낮에는 따뜻(20~25°C), 겹쳐입기 추천</span></div></div>
+    <div class="clothing-item"><span class="c-icon">🧥</span><div><strong>얇은 바람막이 / 가디건</strong><br><span style="font-size:0.82em;color:var(--text-light);">아침/저녁 쌀쌀(14~16°C)</span></div></div>
+    <div class="clothing-item"><span class="c-icon">👟</span><div><strong>편한 운동화</strong><br><span style="font-size:0.82em;color:var(--text-light);">하루 15,000~20,000보 예상</span></div></div>
+    <div class="clothing-item"><span class="c-icon">🧢</span><div><strong>모자 / 선글라스</strong><br><span style="font-size:0.82em;color:var(--text-light);">자외선 지수 높음</span></div></div>
+    <div class="clothing-item"><span class="c-icon">🌂</span><div><strong>접이식 우산</strong><br><span style="font-size:0.82em;color:var(--text-light);">갑작스러운 소나기 대비</span></div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">마지막 날 체크리스트</div>
+    <div style="display:flex;margin-bottom:12px;border-radius:10px;overflow:hidden;border:2px solid var(--border);">
+      <button id="ldFamilyTab1" style="flex:1;padding:8px;border:none;font-weight:700;font-size:0.85em;cursor:pointer;background:var(--primary);color:#fff;transition:all 0.2s;" onclick="switchLastDayFamily(1)">현주네</button>
+      <button id="ldFamilyTab2" style="flex:1;padding:8px;border:none;font-weight:700;font-size:0.85em;cursor:pointer;background:#fff;color:var(--text);transition:all 0.2s;" onclick="switchLastDayFamily(2)">하은이네</button>
+    </div>
+    <div id="lastDayChecklist"></div>
+    <div id="lastDayStatus" class="status-banner status-incomplete" style="margin-top:10px;">출국 준비 미완료</div>
+  </div>
+</div>
+
+<!-- ========== 일정 ========== -->
+<div class="tab-content" id="tab-planner">
+  <div class="day-tabs" id="dayTabs"></div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📌</span> 추천 관광지</div>
+    <div class="sub-tabs" id="categoryTabs">
+      <button class="sub-tab active" onclick="filterRecommend('all',this)">전체</button>
+      <button class="sub-tab" onclick="filterRecommend('sightseeing',this)">🏯 관광</button>
+      <button class="sub-tab" onclick="filterRecommend('shopping',this)">🛍️ 쇼핑</button>
+      <button class="sub-tab" onclick="filterRecommend('food',this)">🍜 먹거리</button>
+      <button class="sub-tab" onclick="filterRecommend('family',this)">👨‍👩‍👧 가족</button>
+    </div>
+    <div class="recommend-grid" id="recommendGrid"></div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">➕</span> 직접 일정 추가</div>
+    <div class="input-group"><label>시간</label><input type="time" id="customTime" value="10:00"></div>
+    <div class="input-group"><label>장소/활동명</label><input type="text" id="customPlace" placeholder="예: 오사카성 방문"></div>
+    <button class="btn btn-primary btn-full" onclick="addCustomSchedule()">일정 추가</button>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📝</span> <span id="currentDayLabel">Day 1</span> 일정</div>
+    <div id="scheduleList"><p style="font-size:0.85em;color:var(--text-light);text-align:center;">등록된 일정이 없습니다</p></div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📸</span> 사진/메모 기록</div>
+    <div class="photo-upload" onclick="document.getElementById('photoInput').click()">📷 사진 추가하기 (클릭)</div>
+    <input type="file" id="photoInput" accept="image/*" multiple style="display:none" onchange="handlePhotoUpload(event)">
+    <div class="photo-preview" id="photoPreview"></div>
+    <textarea class="memo-area" id="dayMemo" placeholder="오늘의 메모를 작성하세요..." onchange="saveDayMemo()"></textarea>
+  </div>
+</div>
+
+<!-- ========== 맛집 ========== -->
+<div class="tab-content" id="tab-food">
+  <div class="card">
+    <div class="card-title"><span class="icon">🍽️</span> 지역별 맛집 추천</div>
+    <div class="area-btns" id="areaBtns">
+      <button class="area-btn active" onclick="showArea('dotonbori',this)">도톤보리</button>
+      <button class="area-btn" onclick="showArea('shinsekai',this)">신세카이</button>
+      <button class="area-btn" onclick="showArea('umeda',this)">우메다</button>
+      <button class="area-btn" onclick="showArea('namba',this)">난바</button>
+      <button class="area-btn" onclick="showArea('kuromon',this)">쿠로몬시장</button>
+    </div>
+    <div id="restaurantList"></div>
+  </div>
+</div>
+
+<!-- ========== 일본어 ========== -->
+<div class="tab-content" id="tab-japanese">
+  <div class="card">
+    <div class="card-title"><span class="icon">🗣️</span> 간단 일본어 회화</div>
+    <div class="sub-tabs" id="phraseTabs">
+      <button class="sub-tab active" onclick="showPhraseCategory('greet',this)">👋 인사</button>
+      <button class="sub-tab" onclick="showPhraseCategory('restaurant',this)">🍽️ 식당</button>
+      <button class="sub-tab" onclick="showPhraseCategory('shopping',this)">🛍️ 쇼핑</button>
+      <button class="sub-tab" onclick="showPhraseCategory('direction',this)">🗺️ 길묻기</button>
+      <button class="sub-tab" onclick="showPhraseCategory('emergency',this)">🆘 긴급</button>
+    </div>
+    <div id="phraseList"></div>
+  </div>
+</div>
+
+<!-- ========== 숙소가이드 ========== -->
+<div class="tab-content" id="tab-accommodation">
+  <div class="card">
+    <div class="card-title"><span class="icon">🏠</span> 숙소 정보</div>
+    <div style="font-size:0.9em;line-height:1.8;">
+      <strong>숙소명:</strong> MA Masters Residence Dotonbori<br>
+      <span style="font-size:0.82em;color:var(--text-light);">MA マスターズレジデンス道頓堀 島之内 心斎橋</span><br>
+      <strong>주소:</strong> 1-chome-9-14 Shimanouchi, 주오구, 오사카시<br>
+      <strong>체크인:</strong> 16:00 이후<br>
+      <strong>체크아웃:</strong> 11:00 이전<br>
+      <strong>예약번호:</strong> <span style="color:#888;font-family:monospace;background:#F5F5F5;padding:2px 6px;border-radius:4px;">🔒 [📝 메모 A2 참조]</span><br>
+      <strong>예약처:</strong> 트립닷컴<br>
+      <strong>시설:</strong> 프런트 데스크, 차량 서비스, 엔터테인먼트 시설
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📥</span> 체크인 가이드</div>
+    <div class="guide-grid">
+      <div class="guide-box"><div class="g-icon">🔑</div><div class="g-title">키박스/비밀번호</div><div class="g-desc">셀프 체크인 대부분<br>사전 안내 메시지 확인</div></div>
+      <div class="guide-box"><div class="g-icon">⏰</div><div class="g-title">체크인 16:00~</div><div class="g-desc">얼리체크인 사전 문의<br>짐 맡기기 가능 여부 확인</div></div>
+      <div class="guide-box"><div class="g-icon">📋</div><div class="g-title">숙소 규칙</div><div class="g-desc">실내 금연<br>소음 주의 (22시 이후)</div></div>
+      <div class="guide-box"><div class="g-icon">🚪</div><div class="g-title">슬리퍼 사용</div><div class="g-desc">실내 슬리퍼 착용<br>외부 신발은 현관에</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📤</span> 체크아웃 가이드 (11:00 이전)</div>
+    <div class="guide-grid">
+      <div class="guide-box"><div class="g-icon">🗑️</div><div class="g-title">쓰레기 분리</div><div class="g-desc">타는쓰레기/안타는쓰레기<br>페트병/캔 분리 필수</div></div>
+      <div class="guide-box"><div class="g-icon">🔑</div><div class="g-title">키 반납</div><div class="g-desc">키박스에 키 반납<br>비밀번호 잠금 확인</div></div>
+      <div class="guide-box"><div class="g-icon">🧹</div><div class="g-title">정리 상태</div><div class="g-desc">사용한 식기 설거지<br>이불 정리</div></div>
+      <div class="guide-box"><div class="g-icon">⏰</div><div class="g-title">체크아웃 11:00</div><div class="g-desc">시간 엄수<br>짐보관 문의 가능</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">🗑️</span> 일본 쓰레기 분리</div>
+    <div style="font-size:0.85em;line-height:1.8;">
+      <strong>🔴 타는 쓰레기</strong> — 음식물, 종이, 나무, 옷<br>
+      <strong>🔵 안 타는 쓰레기</strong> — 금속, 유리, 도자기<br>
+      <strong>🟡 캔/병/페트병</strong> — 깨끗이 씻어서 분리<br>
+      <strong>⚪ 플라스틱 포장재</strong> — プラ 마크 있는 것
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📝</span> 숙소 메모</div>
+    <textarea class="memo-area" id="hotelMemo" rows="4" placeholder="와이파이 비밀번호, 숙소 규칙, 호스트 연락처 등..." oninput="saveHotelMemo()" style="min-height:80px;"></textarea>
+  </div>
+</div>
+
+<!-- ========== VJW ========== -->
+<div class="tab-content" id="tab-vjw">
+  <div class="card">
+    <div class="card-title">Visit Japan Web 등록 가이드</div>
+    <p style="font-size:0.85em;color:var(--text-light);margin-bottom:12px;">일본 입국 시 세관신고를 위한 사전 등록 사이트입니다. 출발 2주 전까지 등록을 완료하세요.</p>
+    <a href="https://www.vjw.digital.go.jp/" target="_blank" rel="noopener noreferrer" class="vjw-link-btn">🌐 Visit Japan Web 사이트 바로가기 →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">단계별 등록 가이드</div>
+    <div style="font-size:0.82em;color:var(--text-light);margin-bottom:8px;">각 단계를 클릭하면 상세 안내 및 사이트 화면을 확인할 수 있습니다.</div>
+
+    <div class="step-item" style="cursor:pointer;" onclick="toggleVJWStep(1)">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h4>회원가입 ▼</h4>
+        <p>이메일로 계정 생성</p>
+      </div>
+    </div>
+    <div id="vjw-step-1" style="display:none;padding:10px;background:#F8F9FA;border-radius:8px;margin-bottom:8px;">
+      <div style="font-size:0.85em;line-height:1.8;">
+        1. <a href="https://www.vjw.digital.go.jp/" target="_blank" rel="noopener noreferrer" style="color:var(--primary);">vjw.digital.go.jp</a> 접속<br>
+        2. <strong>"新規アカウント作成"</strong> (새 계정 만들기) 클릭<br>
+        3. 이메일 주소 입력 → 인증 메일 확인<br>
+        4. 비밀번호 설정 (영문+숫자+특수문자)<br>
+        5. 로그인 완료
+      </div>
+      <div style="background:#E6EEF6;padding:10px;border-radius:8px;margin-top:8px;font-size:0.82em;">
+        💡 한국어 지원됩니다. 우측 상단 언어 변경에서 🇰🇷 한국어 선택 가능
+      </div>
+      <a href="https://www.vjw.digital.go.jp/" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;padding:10px;margin-top:8px;background:var(--primary);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.85em;">사이트에서 직접 확인하기 →</a>
+    </div>
+
+    <div class="step-item" style="cursor:pointer;" onclick="toggleVJWStep(2)">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h4>여행 일정 등록 ▼</h4>
+        <p>입국 정보 및 항공편 등록</p>
+      </div>
+    </div>
+    <div id="vjw-step-2" style="display:none;padding:10px;background:#F8F9FA;border-radius:8px;margin-bottom:8px;">
+      <div style="font-size:0.85em;line-height:1.8;">
+        1. 로그인 후 <strong>"本人の情報"</strong> (본인 정보) 메뉴<br>
+        2. <strong>"新規登録"</strong> (신규 등록) 클릭<br>
+        3. 항공편 정보 입력:<br>
+        &nbsp;&nbsp;• 도착편: <strong>KE737</strong> / 5월 1일<br>
+        &nbsp;&nbsp;• 도착공항: <strong>간사이국제공항 (KIX)</strong><br>
+        4. 숙박 정보 입력:<br>
+        &nbsp;&nbsp;• 주소: 1-chome-9-14 Shimanouchi, Chuo-ku, Osaka
+      </div>
+    </div>
+
+    <div class="step-item" style="cursor:pointer;" onclick="toggleVJWStep(3)">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h4>본인 정보 등록 ▼</h4>
+        <p>여권 정보 입력</p>
+      </div>
+    </div>
+    <div id="vjw-step-3" style="display:none;padding:10px;background:#F8F9FA;border-radius:8px;margin-bottom:8px;">
+      <div style="font-size:0.85em;line-height:1.8;">
+        1. 여권 사진 촬영 후 업로드<br>
+        2. 여권 정보 자동 인식 (수동 입력 가능)<br>
+        &nbsp;&nbsp;• 성명 (영문)<br>
+        &nbsp;&nbsp;• 생년월일<br>
+        &nbsp;&nbsp;• 여권번호<br>
+        &nbsp;&nbsp;• 국적: Korea, Republic of<br>
+        3. 정보 확인 후 저장
+      </div>
+      <div style="background:#EDF3F9;padding:10px;border-radius:8px;margin-top:8px;font-size:0.82em;">
+        ⚠️ 여권 유효기간이 <strong>6개월 이상</strong> 남아있는지 반드시 확인하세요!
+      </div>
+    </div>
+
+    <div class="step-item" style="cursor:pointer;" onclick="toggleVJWStep(4)">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h4>동반 가족 등록 (중요!) ▼</h4>
+        <p>가족 5명 각각 등록 필요</p>
+      </div>
+    </div>
+    <div id="vjw-step-4" style="display:none;padding:10px;background:#F8F9FA;border-radius:8px;margin-bottom:8px;">
+      <div style="font-size:0.85em;line-height:1.8;">
+        1. <strong>"同伴者の情報"</strong> (동반자 정보) 메뉴<br>
+        2. <strong>"同伴者を追加"</strong> (동반자 추가) 클릭<br>
+        3. 각 가족 구성원의 여권 정보 입력<br>
+        &nbsp;&nbsp;• 가족1: 성인(48세), 자녀(12세 여아)<br>
+        &nbsp;&nbsp;• 가족2: 성인(48세), 성인(43세), 자녀(14세 여아)<br>
+        4. <strong>미성년자도 각각 별도 등록</strong> 필요<br>
+        5. 총 5명 등록 완료 확인
+      </div>
+      <div style="background:#E2EEE8;padding:10px;border-radius:8px;margin-top:8px;font-size:0.82em;">
+        ✅ 동반 가족은 대표자 계정에서 함께 등록 가능. 가족 각각 별도 계정 불필요.
+      </div>
+    </div>
+
+    <div class="step-item" style="cursor:pointer;" onclick="toggleVJWStep(5)">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h4>세관신고 작성 ▼</h4>
+        <p>반입 물품 신고</p>
+      </div>
+    </div>
+    <div id="vjw-step-5" style="display:none;padding:10px;background:#F8F9FA;border-radius:8px;margin-bottom:8px;">
+      <div style="font-size:0.85em;line-height:1.8;">
+        1. <strong>"携帯品・別送品申告"</strong> (세관신고) 메뉴<br>
+        2. 반입 물품 해당 여부 체크<br>
+        &nbsp;&nbsp;• 면세범위: 주류 3병(760ml), 담배 200개비, 향수 2온스<br>
+        &nbsp;&nbsp;• 해외 시가 합계 20만엔 이내<br>
+        3. 대부분 "아니오" 체크 후 제출<br>
+        4. 가족 단위로 1건 작성 가능
+      </div>
+    </div>
+
+    <div class="step-item" style="cursor:pointer;" onclick="toggleVJWStep(6)">
+      <div class="step-number">6</div>
+      <div class="step-content">
+        <h4>QR 코드 생성 ▼</h4>
+        <p>입국 시 제시할 QR 코드</p>
+      </div>
+    </div>
+    <div id="vjw-step-6" style="display:none;padding:10px;background:#F8F9FA;border-radius:8px;margin-bottom:8px;">
+      <div style="font-size:0.85em;line-height:1.8;">
+        1. 모든 등록 완료 후 QR코드 자동 생성<br>
+        2. <strong>"QRコードを表示"</strong> 버튼 클릭<br>
+        3. 📱 <strong>반드시 스크린샷 저장!</strong><br>
+        4. 입국심사 시 QR코드 제시<br>
+        5. 세관 통과 시에도 QR코드 제시
+      </div>
+      <div style="background:#F5E0E0;padding:10px;border-radius:8px;margin-top:8px;font-size:0.82em;">
+        🔴 <strong>필수!</strong> 와이파이가 없는 상황에서도 보여줄 수 있도록<br>
+        QR코드를 <strong>스크린샷으로 저장</strong>해두세요. 가족 전원분!
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 스토리 (여행 다이어리) ========== -->
+<div class="tab-content" id="tab-story">
+  <div class="card">
+    <div class="card-title">여행 다이어리</div>
+    <p style="font-size:0.85em;color:var(--text-light);margin-bottom:10px;">여행하면서 매일의 이야기와 사진을 기록하세요.</p>
+    <div class="day-tabs" id="storyDayTabs"></div>
+  </div>
+
+  <div class="card" id="storyEditor">
+    <div class="input-group">
+      <label>제목</label>
+      <input type="text" id="storyTitle" placeholder="오늘의 제목 (예: 도톤보리의 밤)" oninput="saveStoryEntry()">
+    </div>
+    <div class="input-group">
+      <label>이야기</label>
+      <textarea id="storyText" rows="6" placeholder="오늘 하루를 자유롭게 기록하세요..." oninput="saveStoryEntry()" style="min-height:120px;"></textarea>
+    </div>
+    <div class="input-group">
+      <label>사진 / 영상</label>
+      <div class="photo-upload" onclick="document.getElementById('storyPhotoInput').click()">사진 또는 영상 추가 (클릭)</div>
+      <input type="file" id="storyPhotoInput" accept="image/*,video/*" multiple style="display:none" onchange="handleStoryMedia(event)">
+      <div class="photo-preview" id="storyMediaPreview" style="margin-top:8px;"></div>
+    </div>
+  </div>
+
+  <!-- 전체 타임라인 보기 -->
+  <div class="card">
+    <div class="card-title">전체 타임라인</div>
+    <button class="btn btn-primary btn-full" onclick="showTimeline()" style="margin-bottom:10px;">타임라인 보기</button>
+    <div id="storyTimeline"></div>
+  </div>
+
+  <!-- 참고용 자동 생성 -->
+  <div class="card" style="border:1px dashed var(--border);">
+    <div class="card-title" style="font-size:0.95em;color:var(--text-light);">참고용 자동 스토리</div>
+    <p style="font-size:0.8em;color:var(--text-light);margin-bottom:8px;">일정 탭의 데이터를 기반으로 생성됩니다. 참고용으로만 활용하세요.</p>
+    <button class="btn btn-outline btn-sm" onclick="generateStory()">자동 생성</button>
+    <div id="storyOutput" style="margin-top:10px;"></div>
+  </div>
+
+  <div class="toolbar" style="margin-top:8px;">
+    <button class="btn btn-outline btn-sm" onclick="exportStoryJSON()">JSON 내보내기</button>
+    <button class="btn btn-outline btn-sm" onclick="copyStory()">텍스트 복사</button>
+  </div>
+</div>
+
+<!-- ========== 항공/숙소 정보 ========== -->
+<div class="tab-content" id="tab-info">
+  <div class="card">
+    <div class="card-title">항공권 상세 정보</div>
+    <div class="info-row"><span class="info-label">예약번호</span><span class="info-value" style="color:#888;font-family:monospace;background:#F5F5F5;padding:2px 6px;border-radius:4px;">🔒 [📝 메모 A1 참조]</span></div>
+    <div class="info-row"><span class="info-label">총 금액</span><span class="info-value">4,050,370원</span></div>
+    <div class="info-row"><span class="info-label">항공사</span><span class="info-value">대한항공 (Korean Air)</span></div>
+
+    <div class="cat-header">🛫 출발편 (5/1 금)</div>
+    <div class="info-row"><span class="info-label">편명</span><span class="info-value">KE737</span></div>
+    <div class="info-row"><span class="info-label">출발</span><span class="info-value">ICN 인천 T1 · 20:50</span></div>
+    <div class="info-row"><span class="info-label">도착</span><span class="info-value">KIX 간사이 T1 · 22:40 (현지시간)</span></div>
+    <div class="info-row"><span class="info-label">소요</span><span class="info-value">1시간 50분</span></div>
+    <div class="info-row"><span class="info-label">좌석</span><span class="info-value">일반석 · E클래스</span></div>
+    <div class="info-row"><span class="info-label">기종</span><span class="info-value">에어버스 A321/neo(중형)</span></div>
+    <div class="info-row"><span class="info-label">기내식</span><span class="info-value">제공</span></div>
+
+    <div class="cat-header">🛬 귀국편 (5/6 수)</div>
+    <div class="info-row"><span class="info-label">편명</span><span class="info-value">KE1174</span></div>
+    <div class="info-row"><span class="info-label">출발</span><span class="info-value" style="color:var(--danger);">UKB 고베 T1 · 18:55</span></div>
+    <div class="info-row"><span class="info-label">도착</span><span class="info-value">ICN 인천 T1 · 20:50</span></div>
+    <div class="info-row"><span class="info-label">소요</span><span class="info-value">1시간 55분</span></div>
+    <div class="info-row"><span class="info-label">좌석</span><span class="info-value">일반석 · Q클래스</span></div>
+    <div class="info-row"><span class="info-label">기종</span><span class="info-value">에어버스 A321/neo(중형)</span></div>
+    <div class="info-row"><span class="info-label">기내식</span><span class="info-value">제공</span></div>
+    <div style="background:#EDF3F9;padding:10px;border-radius:8px;margin-top:10px;font-size:0.82em;">
+      ⚠️ 귀국편은 <strong>고베공항(UKB)</strong>에서 출발합니다! 간사이공항(KIX)이 아닙니다.<br>
+      공항 탭에서 숙소 → 고베공항 이동 경로를 확인하세요.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">지정 좌석 배치</div>
+    <div style="background:#FFF8E1;border-left:4px solid #F9A825;padding:10px;border-radius:6px;font-size:0.82em;margin-bottom:12px;">
+      🔒 <strong>개인정보 보호:</strong> 탑승자 영문/한글 성명은 [📝 B1~B6] 코드로 마스킹되어 있습니다.<br>
+      실제 이름은 <strong>본인 핸드폰 잠금메모</strong>의 <code>비공개_메모_템플릿.md</code> 참조.
+    </div>
+
+    <div class="cat-header">출발편 KE737 (5/1)</div>
+    <table style="width:100%;font-size:0.85em;border-collapse:collapse;margin-bottom:12px;">
+      <tr style="background:#F0F4F8;"><th style="padding:8px;text-align:left;border-bottom:1px solid var(--border);">탑승자</th><th style="padding:8px;text-align:center;border-bottom:1px solid var(--border);">좌석</th></tr>
+      <tr><td style="padding:8px;border-bottom:1px solid var(--border);">👤 동행자1 <span style="font-size:0.8em;color:#888;">[📝 B1]</span></td><td style="padding:8px;text-align:center;border-bottom:1px solid var(--border);color:var(--primary);font-weight:700;">51D</td></tr>
+      <tr><td style="padding:8px;border-bottom:1px solid var(--border);">👤 동행자2 <span style="font-size:0.8em;color:#888;">[📝 B2]</span></td><td style="padding:8px;text-align:center;border-bottom:1px solid var(--border);color:var(--primary);font-weight:700;">51E</td></tr>
+      <tr><td style="padding:8px;border-bottom:1px solid var(--border);">👤 동행자3 <span style="font-size:0.8em;color:#888;">[📝 B3]</span></td><td style="padding:8px;text-align:center;border-bottom:1px solid var(--border);color:var(--primary);font-weight:700;">51F</td></tr>
+      <tr><td style="padding:8px;border-bottom:1px solid var(--border);">👤 동행자4 <span style="font-size:0.8em;color:#888;">[📝 B4]</span></td><td style="padding:8px;text-align:center;border-bottom:1px solid var(--border);color:var(--primary);font-weight:700;">52D</td></tr>
+      <tr><td style="padding:8px;border-bottom:1px solid var(--border);">👤 동행자5 <span style="font-size:0.8em;color:#888;">[📝 B5]</span></td><td style="padding:8px;text-align:center;border-bottom:1px solid var(--border);color:var(--primary);font-weight:700;">52E</td></tr>
+      <tr><td style="padding:8px;">👤 동행자6 <span style="font-size:0.8em;color:#888;">[📝 B6]</span></td><td style="padding:8px;text-align:center;color:var(--primary);font-weight:700;">52F</td></tr>
+    </table>
+    <div style="font-size:0.8em;color:var(--text-light);padding:6px 8px;background:#F0F4F8;border-radius:6px;margin-bottom:14px;">51열: B1·B2·B3 (나란히) / 52열: B4·B5·B6 (나란히)</div>
+
+    <div class="cat-header">귀국편 KE2174 (5/6)</div>
+    <table style="width:100%;font-size:0.85em;border-collapse:collapse;margin-bottom:12px;">
+      <tr style="background:#F0F4F8;"><th style="padding:8px;text-align:left;border-bottom:1px solid var(--border);">탑승자</th><th style="padding:8px;text-align:center;border-bottom:1px solid var(--border);">좌석</th></tr>
+      <tr><td style="padding:8px;border-bottom:1px solid var(--border);">👤 동행자1 <span style="font-size:0.8em;color:#888;">[📝 B1]</span></td><td style="padding:8px;text-align:center;border-bottom:1px solid var(--border);color:var(--primary);font-weight:700;">34A</td></tr>
+      <tr><td style="padding:8px;border-bottom:1px solid var(--border);">👤 동행자2 <span style="font-size:0.8em;color:#888;">[📝 B2]</span></td><td style="padding:8px;text-align:center;border-bottom:1px solid var(--border);color:var(--primary);font-weight:700;">34B</td></tr>
+      <tr><td style="padding:8px;border-bottom:1px solid var(--border);">👤 동행자3 <span style="font-size:0.8em;color:#888;">[📝 B3]</span></td><td style="padding:8px;text-align:center;border-bottom:1px solid var(--border);color:var(--primary);font-weight:700;">34C</td></tr>
+      <tr><td style="padding:8px;border-bottom:1px solid var(--border);">👤 동행자4 <span style="font-size:0.8em;color:#888;">[📝 B4]</span></td><td style="padding:8px;text-align:center;border-bottom:1px solid var(--border);color:var(--primary);font-weight:700;">35A</td></tr>
+      <tr><td style="padding:8px;border-bottom:1px solid var(--border);">👤 동행자5 <span style="font-size:0.8em;color:#888;">[📝 B5]</span></td><td style="padding:8px;text-align:center;border-bottom:1px solid var(--border);color:var(--primary);font-weight:700;">35B</td></tr>
+      <tr><td style="padding:8px;">👤 동행자6 <span style="font-size:0.8em;color:#888;">[📝 B6]</span></td><td style="padding:8px;text-align:center;color:var(--primary);font-weight:700;">35C</td></tr>
+    </table>
+    <div style="font-size:0.8em;color:var(--text-light);padding:6px 8px;background:#F0F4F8;border-radius:6px;">34열: B1·B2·B3 (A-B-C) / 35열: B4·B5·B6 (A-B-C)</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">숙소 상세 정보</div>
+    <div class="info-row"><span class="info-label">숙소명</span><span class="info-value">MA Masters Residence Dotonbori</span></div>
+    <div class="info-row"><span class="info-label">일본어명</span><span class="info-value">MA マスターズレジデンス道頓堀 島之内 心斎橋</span></div>
+    <div class="info-row"><span class="info-label">예약번호</span><span class="info-value" style="color:#888;font-family:monospace;background:#F5F5F5;padding:2px 6px;border-radius:4px;">🔒 [📝 메모 A2 참조]</span></div>
+    <div class="info-row"><span class="info-label">예약처</span><span class="info-value">트립닷컴 (Trip.com)</span></div>
+    <div class="info-row"><span class="info-label">숙박기간</span><span class="info-value">5/1(금) ~ 5/6(수) · 5박</span></div>
+    <div class="info-row"><span class="info-label">체크인</span><span class="info-value">16:00 이후</span></div>
+    <div class="info-row"><span class="info-label">체크아웃</span><span class="info-value">11:00 이전</span></div>
+    <div class="info-row"><span class="info-label">주소</span><span class="info-value">1-chome-9-14 Shimanouchi, 주오구, 오사카</span></div>
+    <div class="info-row"><span class="info-label">시설</span><span class="info-value">프런트 데스크, 차량 서비스, 엔터테인먼트</span></div>
+
+    <div class="cat-header">📝 추가 메모</div>
+    <div class="input-group">
+      <textarea id="extraHotelMemo" rows="3" placeholder="와이파이 비밀번호, 호스트 연락처 등 추가 정보..." oninput="saveExtraMemo()"></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom Nav -->
+<div class="bottom-nav">
+  <button class="nav-item active" onclick="switchTab('home',this)"><span class="nav-icon">🏠</span>홈</button>
+  <button class="nav-item" onclick="switchTab('airport',this)"><span class="nav-icon">✈️</span>공항</button>
+  <button class="nav-item" onclick="switchTab('checklist',this)"><span class="nav-icon">✅</span>준비물</button>
+  <button class="nav-item" onclick="switchTab('planner',this)"><span class="nav-icon">📅</span>일정</button>
+  <button class="nav-item" onclick="switchTab('food',this)"><span class="nav-icon">🍽️</span>맛집</button>
+  <button class="nav-item" onclick="switchTab('japanese',this)"><span class="nav-icon">🗣️</span>회화</button>
+  <button class="nav-item" onclick="switchTab('accommodation',this)"><span class="nav-icon">🏠</span>숙소</button>
+  <button class="nav-item" onclick="switchTab('vjw',this)"><span class="nav-icon">🌐</span>VJW</button>
+  <button class="nav-item" onclick="switchTab('story',this)"><span class="nav-icon">📖</span>스토리</button>
+  <button class="nav-item" onclick="switchTab('info',this)"><span class="nav-icon">📋</span>정보</button>
+</div>
+
+<script>
+const STORAGE_KEY='osaka_trip_2026';
+const TRIP_START=new Date('2026-05-01');
+const DAY_LABELS=['Day 1 (5/1 금)','Day 2 (5/2 토)','Day 3 (5/3 일)','Day 4 (5/4 월)','Day 5 (5/5 화)','Day 6 (5/6 수)'];
+
+// Default checklist items (카테고리별)
+const checkCategories=['여행 전 준비물','여행 서류','경비','전자기기','여행용 상비약','세면용품','기타'];
+const defaultCheckItems=[
+  {id:'doc_copy',label:'여행 서류 사본',cat:'여행 전 준비물'},
+  {id:'exchange',label:'현지 통화 환전',cat:'여행 전 준비물'},
+  {id:'passport',label:'여권 & 비자',cat:'여행 서류'},
+  {id:'ticket',label:'항공권 / 여정표',cat:'여행 서류'},
+  {id:'hotel_confirm',label:'호텔 예약 확정서',cat:'여행 서류'},
+  {id:'insurance',label:'보험 증명서',cat:'여행 서류'},
+  {id:'cash',label:'현금 (엔화)',cat:'경비'},
+  {id:'card',label:'신용카드',cat:'경비'},
+  {id:'charger',label:'충전기 / 보조배터리',cat:'전자기기'},
+  {id:'adapter',label:'멀티어댑터 (일본 A타입)',cat:'전자기기'},
+  {id:'usim',label:'유심 / 포켓와이파이',cat:'전자기기'},
+  {id:'medicine',label:'상비약 (해열제, 소화제, 밴드)',cat:'여행용 상비약'},
+  {id:'towel',label:'수건 / 세면도구',cat:'세면용품'},
+  {id:'sunscreen',label:'선크림',cat:'세면용품'},
+  {id:'umbrella',label:'접이식 우산',cat:'기타'},
+  {id:'sunglasses',label:'선글라스',cat:'기타'},
+  {id:'bag',label:'보조 가방 (에코백)',cat:'기타'},
+  {id:'snack',label:'간식 / 물',cat:'기타'},
+  {id:'vjw',label:'Visit Japan Web 등록 완료',cat:'기타'}
+];
+
+function getDefaultData(){return{checkItems:null,familyChecks:{1:{},2:{}},currentFamily:1,lastDayChecklist:{},schedule:{1:[],2:[],3:[],4:[],5:[],6:[]},photos:{1:[],2:[],3:[],4:[],5:[],6:[]},memos:{1:'',2:'',3:'',4:'',5:'',6:''},transfer:{arrival:'',departure:''},hotelMemo:'',extraMemo:'',currentDay:1};}
+function loadData(){try{const s=localStorage.getItem(STORAGE_KEY);if(s){const p=JSON.parse(s),d=getDefaultData();for(const k in d)if(!(k in p))p[k]=d[k];
+// 마이그레이션: 이전 데이터 → 새 구조 (familyChecks)
+if(!p.familyChecks)p.familyChecks={1:{},2:{}};
+if(!p.currentFamily)p.currentFamily=1;
+if(!p.checkItems&&(p.checklist||p.customCheckItems)){
+  p.checkItems=JSON.parse(JSON.stringify(defaultCheckItems)).map(i=>{delete i.checked;return i;});
+  if(p.checklist){for(const k in p.checklist){if(p.checklist[k])p.familyChecks[1][k]=true;}}
+  if(p.customCheckItems){p.customCheckItems.forEach(ci=>{p.checkItems.push({id:ci.id,label:ci.label,icon:ci.icon||'📌'});if(ci.checked)p.familyChecks[1][ci.id]=true;});}
+  delete p.checklist;delete p.customCheckItems;
+}
+// 기존 checkItems에 checked가 있는 경우 familyChecks로 이관
+if(p.checkItems&&p.checkItems.length>0&&p.checkItems[0].hasOwnProperty('checked')){
+  p.checkItems.forEach(ci=>{if(ci.checked)p.familyChecks[1][ci.id]=true;delete ci.checked;});
+}
+return p;}}catch(e){}return getDefaultData();}
+function saveData(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(appData));}catch(e){}}
+let appData=loadData();
+// 준비물 데이터 버전 체크 - v2(카테고리) 아니면 강제 리셋
+const CHECK_VERSION=2;
+if(!appData._checkVer||appData._checkVer<CHECK_VERSION){
+  // 기존 familyChecks 체크 상태는 보존
+  const fc1=appData.familyChecks&&appData.familyChecks[1]?{...appData.familyChecks[1]}:{};
+  const fc2=appData.familyChecks&&appData.familyChecks[2]?{...appData.familyChecks[2]}:{};
+  appData.checkItems=defaultCheckItems.map(i=>({id:i.id,label:i.label,cat:i.cat}));
+  appData.familyChecks={1:fc1,2:fc2};
+  appData._checkVer=CHECK_VERSION;
+  saveData();
+}
+if(!appData.familyChecks)appData.familyChecks={1:{},2:{}};
+if(!appData.currentFamily)appData.currentFamily=1;
+// 마지막날 체크리스트도 카테고리 버전 체크
+if(!appData._lastDayVer||appData._lastDayVer<2){
+  const oldLd=appData.lastDayChecklist||{};
+  appData.lastDayItems=defaultLastDayItems.map(i=>({id:i.id,label:i.label,cat:i.cat}));
+  appData.lastDayFamilyChecks={1:{},2:{}};
+  // 기존 체크 보존
+  for(const k in oldLd){if(oldLd[k])appData.lastDayFamilyChecks[1][k]=true;}
+  appData._lastDayVer=2;
+  saveData();
+}
+if(!appData.lastDayItems)appData.lastDayItems=defaultLastDayItems.map(i=>({id:i.id,label:i.label,cat:i.cat}));
+if(!appData.lastDayFamilyChecks)appData.lastDayFamilyChecks={1:{},2:{}};
+const defaultLastDayItems=[
+  {id:'ld_passport',label:'여권 확인',cat:'소지품 확인'},
+  {id:'ld_charger',label:'충전기/어댑터 챙김',cat:'소지품 확인'},
+  {id:'ld_souvenir',label:'기념품 챙김',cat:'소지품 확인'},
+  {id:'ld_iccard',label:'교통카드 정리 (잔액 확인)',cat:'소지품 확인'},
+  {id:'ld_packing',label:'짐 정리 완료',cat:'숙소 정리'},
+  {id:'ld_trash',label:'숙소 쓰레기 분리/처리',cat:'숙소 정리'},
+  {id:'ld_fridge',label:'냉장고 확인 (남은 음식 정리)',cat:'숙소 정리'},
+  {id:'ld_key',label:'숙소 키 반납',cat:'숙소 정리'},
+  {id:'ld_checkout',label:'체크아웃 시간 확인',cat:'출발 전'}
+];
+const recommendedSpots=[
+  {name:'도톤보리',icon:'🌉',cat:'sightseeing',time:'2~3시간'},
+  {name:'오사카성',icon:'🏯',cat:'sightseeing',time:'2~3시간'},
+  {name:'유니버설 스튜디오',icon:'🎢',cat:'family',time:'종일'},
+  {name:'카이유칸 수족관',icon:'🐠',cat:'family',time:'3~4시간'},
+  {name:'신사이바시 쇼핑',icon:'🛍️',cat:'shopping',time:'2~3시간'},
+  {name:'난바 쇼핑',icon:'🛒',cat:'shopping',time:'2~3시간'},
+  {name:'쿠로몬 시장',icon:'🦀',cat:'food',time:'1~2시간'},
+  {name:'텐노지 동물원',icon:'🦁',cat:'family',time:'2~3시간'},
+  {name:'통천각',icon:'🗼',cat:'sightseeing',time:'1~2시간'},
+  {name:'신세카이',icon:'🏮',cat:'sightseeing',time:'2~3시간'},
+  {name:'우메다 스카이빌딩',icon:'🌃',cat:'sightseeing',time:'1~2시간'},
+  {name:'돈키호테 쇼핑',icon:'🏪',cat:'shopping',time:'1~2시간'},
+  {name:'나라공원 (당일치기)',icon:'🦌',cat:'sightseeing',time:'반나절'},
+  {name:'교토 (당일치기)',icon:'⛩️',cat:'sightseeing',time:'종일'},
+  {name:'타코야키 체험',icon:'🐙',cat:'food',time:'1시간'},
+  {name:'라멘 맛집 탐방',icon:'🍜',cat:'food',time:'1~2시간'},
+  {name:'아베노 하루카스',icon:'🏙️',cat:'sightseeing',time:'2~3시간'},
+  {name:'포켓몬센터',icon:'⚡',cat:'shopping',time:'1~2시간'},
+  {name:'닌텐도 뮤지엄',icon:'🎮',cat:'family',time:'반나절'},
+  {name:'오사카 자연사 박물관',icon:'🦕',cat:'family',time:'2~3시간'}
+];
+const restaurants={
+  dotonbori:[
+    {name:'쿠쿠루 (くくる)',type:'타코야키',price:'500~800엔',menu:'크리미 타코야키, 네기타코야키'},
+    {name:'이치란 라멘 (一蘭)',type:'라멘',price:'890~1,200엔',menu:'톤코츠 라멘 (취향 커스텀)'},
+    {name:'치보 (千房)',type:'오코노미야키',price:'800~1,500엔',menu:'돼지고기 오코노미야키, 모던야키'},
+    {name:'카니도라쿠 (かに道楽)',type:'게 요리',price:'3,000~8,000엔',menu:'게 코스 요리, 게 튀김'},
+    {name:'긴류 라멘 (金龍ラーメン)',type:'라멘',price:'600~900엔',menu:'24시간 영업 라멘'},
+    {name:'리쿠로 오지상 (りくろーおじさん)',type:'디저트',price:'765엔',menu:'치즈케이크 (오사카 명물)'}
+  ],
+  shinsekai:[
+    {name:'다루마 (だるま)',type:'쿠시카츠',price:'100~200엔/개',menu:'쿠시카츠 세트 (소스 2번 금지!)'},
+    {name:'쟌쟌요코초 맛집골목',type:'다양',price:'500~1,500엔',menu:'야키니쿠, 호르몬, 쿠시카츠'},
+    {name:'텐구 (てんぐ)',type:'쿠시카츠',price:'100~300엔/개',menu:'새우, 치즈, 연근 쿠시카츠'}
+  ],
+  umeda:[
+    {name:'한큐 백화점 지하',type:'디저트/도시락',price:'500~2,000엔',menu:'양과자, 도시락, 반찬'},
+    {name:'이치란 우메다점',type:'라멘',price:'890~1,200엔',menu:'톤코츠 라멘'},
+    {name:'우메다 요코초',type:'이자카야 골목',price:'1,000~3,000엔',menu:'야키토리, 사시미, 생맥주'}
+  ],
+  namba:[
+    {name:'551 호라이 (蓬莱)',type:'중화만두',price:'340엔~',menu:'돼지고기 만두 (오사카 기념품 1위)'},
+    {name:'지유켄 (自由軒)',type:'카레',price:'800~1,000엔',menu:'오사카 명물 카레라이스'},
+    {name:'난바 워크 맛집거리',type:'다양',price:'500~1,500엔',menu:'우동, 카레, 돈카츠'}
+  ],
+  kuromon:[
+    {name:'쿠로몬 참치 가게',type:'해산물',price:'500~2,000엔',menu:'참치 사시미, 성게알, 가리비'},
+    {name:'과일 가게들',type:'과일',price:'300~1,000엔',menu:'딸기, 멜론, 망고 (시식 가능)'},
+    {name:'타마고야키 전문점',type:'달걀말이',price:'300~500엔',menu:'다시마키 타마고, 달콤한 계란말이'}
+  ]
+};
+const phrases={
+  greet:[
+    {ko:'안녕하세요',jp:'こんにちは',pron:'곤니치와'},
+    {ko:'감사합니다',jp:'ありがとうございます',pron:'아리가토 고자이마스'},
+    {ko:'실례합니다 / 저기요',jp:'すみません',pron:'스미마셍'},
+    {ko:'괜찮습니다',jp:'大丈夫です',pron:'다이죠부데스'},
+    {ko:'안녕히 가세요',jp:'さようなら',pron:'사요나라'},
+    {ko:'네 / 아니요',jp:'はい / いいえ',pron:'하이 / 이이에'}
+  ],
+  restaurant:[
+    {ko:'이거 주세요',jp:'これください',pron:'코레 쿠다사이'},
+    {ko:'메뉴판 주세요',jp:'メニューをください',pron:'메뉴오 쿠다사이'},
+    {ko:'계산해주세요',jp:'お会計お願いします',pron:'오카이케 오네가이시마스'},
+    {ko:'맛있습니다!',jp:'美味しいです',pron:'오이시이데스'},
+    {ko:'물 주세요',jp:'お水ください',pron:'오미즈 쿠다사이'},
+    {ko:'예약했습니다',jp:'予約しました',pron:'요야쿠 시마시타'},
+    {ko:'알레르기가 있어요',jp:'アレルギーがあります',pron:'아레루기가 아리마스'},
+    {ko:'6명입니다',jp:'6名です',pron:'로쿠메데스'}
+  ],
+  shopping:[
+    {ko:'이거 얼마예요?',jp:'これいくらですか？',pron:'코레 이쿠라데스카?'},
+    {ko:'좀 더 싼 거 있나요?',jp:'もっと安いのはありますか？',pron:'못토 야스이노와 아리마스카?'},
+    {ko:'면세 되나요?',jp:'免税できますか？',pron:'멘제 데키마스카?'},
+    {ko:'카드 돼요?',jp:'カードで払えますか？',pron:'카도데 하라에마스카?'},
+    {ko:'봉투 주세요',jp:'袋をください',pron:'후쿠로오 쿠다사이'},
+    {ko:'이거 입어봐도 돼요?',jp:'試着してもいいですか？',pron:'시챠쿠 시테모 이이데스카?'}
+  ],
+  direction:[
+    {ko:'화장실 어디에요?',jp:'トイレはどこですか？',pron:'토이레와 도코데스카?'},
+    {ko:'역은 어디에요?',jp:'駅はどこですか？',pron:'에키와 도코데스카?'},
+    {ko:'이 주소로 가주세요',jp:'この住所にお願いします',pron:'코노 주쇼니 오네가이시마스'},
+    {ko:'여기서 가까워요?',jp:'ここから近いですか？',pron:'코코카라 치카이데스카?'},
+    {ko:'길을 잃었어요',jp:'道に迷いました',pron:'미치니 마요이마시타'}
+  ],
+  emergency:[
+    {ko:'도와주세요!',jp:'助けてください！',pron:'타스케테 쿠다사이!'},
+    {ko:'병원 어디에요?',jp:'病院はどこですか？',pron:'뵤인와 도코데스카?'},
+    {ko:'경찰 불러주세요',jp:'警察を呼んでください',pron:'케사츠오 욘데 쿠다사이'},
+    {ko:'한국어 가능한 분?',jp:'韓国語ができる方はいますか？',pron:'칸코쿠고가 데키루 카타와 이마스카?'},
+    {ko:'여기가 아파요',jp:'ここが痛いです',pron:'코코가 이타이데스'}
+  ]
+};
+
+// ==== Navigation ====
+function switchTab(name,el){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  if(el)el.classList.add('active');
+  if(name==='home')updateHomeProgress();
+  if(name==='planner')initPlanner();
+  if(name==='story')initStory();
+  if(name==='food')showArea('dotonbori',document.querySelector('.area-btn'));
+}
+
+// ==== D-Day ====
+function updateDday(){
+  const today=new Date();today.setHours(0,0,0,0);
+  const start=new Date(TRIP_START);start.setHours(0,0,0,0);
+  const diff=Math.ceil((start-today)/(1000*60*60*24));
+  const b=document.getElementById('ddayBadge');
+  if(diff>0)b.textContent='D-'+diff;
+  else if(diff===0)b.textContent='D-DAY! 🎉';
+  else if(diff>=-5)b.textContent='여행 '+(Math.abs(diff)+1)+'일차 ✈️';
+  else b.textContent='여행 완료! 🏠';
+}
+
+// ==== Checklist (가족별 체크) ====
+let currentFamily=1;
+function switchFamily(f){
+  currentFamily=f;
+  appData.currentFamily=f;
+  saveData();
+  // 탭 UI 업데이트
+  const t1=document.getElementById('familyTab1'),t2=document.getElementById('familyTab2');
+  if(f===1){t1.style.background='var(--primary)';t1.style.color='#fff';t2.style.background='#fff';t2.style.color='var(--text)';}
+  else{t2.style.background='#7B9ABF';t2.style.color='#fff';t1.style.background='#fff';t1.style.color='var(--text)';}
+  renderChecklist();
+}
+function renderChecklist(){
+  const c=document.getElementById('essentialChecklist');
+  const items=appData.checkItems||[];
+  const fc=appData.familyChecks[currentFamily]||{};
+  // 카테고리별 그룹핑
+  const cats=[...new Set(items.map(i=>i.cat||'기타'))];
+  let html='';
+  cats.forEach(cat=>{
+    const catItems=items.filter(i=>(i.cat||'기타')===cat);
+    const catDone=catItems.filter(i=>fc[i.id]).length;
+    html+=`<div class="accordion-header" onclick="this.classList.toggle('open');var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none';" style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#F0F4F8;border-radius:8px;margin-bottom:2px;font-weight:600;font-size:0.9em;">
+      <span>${cat}</span><span style="font-size:0.8em;color:var(--text-light);">${catDone}/${catItems.length} <span class="arrow" style="display:inline-block;transition:transform 0.2s;">▼</span></span>
+    </div><div class="accordion-body" style="margin-bottom:10px;display:none;">`;
+    catItems.forEach((item)=>{
+      const idx=items.indexOf(item);
+      const ck=fc[item.id]?true:false;
+      html+=`<div class="checklist-item ${ck?'checked':''}">
+        <input type="checkbox" ${ck?'checked':''} onchange="toggleCheckItem('${item.id}')">
+        <label>${item.label}</label>
+        <button class="delete-custom" onclick="deleteCheckItem(${idx})" title="삭제">✕</button>
+      </div>`;
+    });
+    html+=`<div class="add-custom-row" style="margin-top:4px;"><input type="text" placeholder="항목 추가..." onkeydown="if(event.key==='Enter')addCheckItemToCat(this,'${cat}')"><button onclick="addCheckItemToCat(this.previousElementSibling,'${cat}')">+</button></div></div>`;
+  });
+  c.innerHTML=html;
+  // 마지막날 체크리스트 (카테고리별)
+  const lc=document.getElementById('lastDayChecklist');
+  const ldItems=appData.lastDayItems||[];
+  const ldFc=appData.lastDayFamilyChecks&&appData.lastDayFamilyChecks[currentFamily]?appData.lastDayFamilyChecks[currentFamily]:{};
+  const ldCats=[...new Set(ldItems.map(i=>i.cat||'기타'))];
+  let ldHtml='';
+  ldCats.forEach(cat=>{
+    const catItems=ldItems.filter(i=>(i.cat||'기타')===cat);
+    const catDone=catItems.filter(i=>ldFc[i.id]).length;
+    ldHtml+=`<div class="accordion-header" onclick="this.classList.toggle('open');var b=this.nextElementSibling;b.style.display=b.style.display==='none'?'block':'none';" style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#F0F4F8;border-radius:8px;margin-bottom:2px;font-weight:600;font-size:0.9em;">
+      <span>${cat}</span><span style="font-size:0.8em;color:var(--text-light);">${catDone}/${catItems.length} ▼</span>
+    </div><div class="accordion-body" style="margin-bottom:10px;display:none;">`;
+    catItems.forEach(item=>{
+      const idx=ldItems.indexOf(item);
+      const ck=ldFc[item.id]?true:false;
+      ldHtml+=`<div class="checklist-item ${ck?'checked':''}">
+        <input type="checkbox" ${ck?'checked':''} onchange="toggleLastDayCheck('${item.id}')">
+        <label>${item.label}</label>
+        <button class="delete-custom" onclick="deleteLastDayItem(${idx})" title="삭제">✕</button>
+      </div>`;
+    });
+    ldHtml+=`<div class="add-custom-row" style="margin-top:4px;"><input type="text" placeholder="항목 추가..." onkeydown="if(event.key==='Enter')addLastDayItemToCat(this,'${cat}')"><button onclick="addLastDayItemToCat(this.previousElementSibling,'${cat}')">+</button></div></div>`;
+  });
+  lc.innerHTML=ldHtml;
+  updateChecklistStatus();updateLastDayStatus();
+}
+function toggleCheckItem(id){
+  if(!appData.familyChecks[currentFamily])appData.familyChecks[currentFamily]={};
+  appData.familyChecks[currentFamily][id]=!appData.familyChecks[currentFamily][id];
+  saveData();renderChecklist();
+}
+function deleteCheckItem(idx){
+  const item=appData.checkItems[idx];
+  if(confirm(`"${item.label}" 항목을 삭제하시겠습니까?\n(현주네·하은이네 모두에서 삭제됩니다)`)){
+    // 양쪽 familyChecks에서도 제거
+    delete appData.familyChecks[1][item.id];
+    delete appData.familyChecks[2][item.id];
+    appData.checkItems.splice(idx,1);
+    saveData();renderChecklist();
+  }
+}
+function switchLastDayFamily(f){
+  currentFamily=f;appData.currentFamily=f;saveData();
+  const t1=document.getElementById('ldFamilyTab1'),t2=document.getElementById('ldFamilyTab2');
+  const ft1=document.getElementById('familyTab1'),ft2=document.getElementById('familyTab2');
+  if(f===1){t1.style.background='var(--primary)';t1.style.color='#fff';t2.style.background='#fff';t2.style.color='var(--text)';if(ft1){ft1.style.background='var(--primary)';ft1.style.color='#fff';}if(ft2){ft2.style.background='#fff';ft2.style.color='var(--text)';}}
+  else{t2.style.background='#7B9ABF';t2.style.color='#fff';t1.style.background='#fff';t1.style.color='var(--text)';if(ft2){ft2.style.background='#7B9ABF';ft2.style.color='#fff';}if(ft1){ft1.style.background='#fff';ft1.style.color='var(--text)';}}
+  renderChecklist();
+}
+function toggleLastDayCheck(id){
+  if(!appData.lastDayFamilyChecks[currentFamily])appData.lastDayFamilyChecks[currentFamily]={};
+  appData.lastDayFamilyChecks[currentFamily][id]=!appData.lastDayFamilyChecks[currentFamily][id];
+  saveData();renderChecklist();
+}
+function deleteLastDayItem(idx){
+  const item=appData.lastDayItems[idx];
+  if(confirm(`"${item.label}" 항목을 삭제하시겠습니까?`)){
+    delete appData.lastDayFamilyChecks[1][item.id];
+    delete appData.lastDayFamilyChecks[2][item.id];
+    appData.lastDayItems.splice(idx,1);
+    saveData();renderChecklist();
+  }
+}
+function addLastDayItemToCat(input,cat){
+  const val=input.value.trim();
+  if(!val)return;
+  appData.lastDayItems.push({id:'ld_custom_'+Date.now(),label:val,cat:cat});
+  saveData();input.value='';renderChecklist();
+}
+
+function addCustomCheckItem(){
+  const input=document.getElementById('customCheckItem');
+  const val=input.value.trim();
+  if(!val)return;
+  appData.checkItems.push({id:'custom_'+Date.now(),label:val,cat:'기타'});
+  saveData();input.value='';renderChecklist();
+}
+function addCheckItemToCat(input,cat){
+  const val=input.value.trim();
+  if(!val)return;
+  appData.checkItems.push({id:'custom_'+Date.now(),label:val,cat:cat});
+  saveData();input.value='';renderChecklist();
+}
+
+function updateChecklistStatus(){
+  const items=appData.checkItems||[];
+  const total=items.length;
+  // 현주네 진행률
+  const fc1=appData.familyChecks[1]||{};
+  const done1=items.filter(i=>fc1[i.id]).length;
+  const pct1=total?Math.round(done1/total*100):0;
+  document.getElementById('family1Rate').textContent=`${done1}/${total} (${pct1}%)`;
+  document.getElementById('family1Bar').style.width=pct1+'%';
+  // 하은이네 진행률
+  const fc2=appData.familyChecks[2]||{};
+  const done2=items.filter(i=>fc2[i.id]).length;
+  const pct2=total?Math.round(done2/total*100):0;
+  document.getElementById('family2Rate').textContent=`${done2}/${total} (${pct2}%)`;
+  document.getElementById('family2Bar').style.width=pct2+'%';
+}
+function updateLastDayStatus(){
+  const items=appData.lastDayItems||[];
+  const total=items.length;
+  const fc=appData.lastDayFamilyChecks&&appData.lastDayFamilyChecks[currentFamily]?appData.lastDayFamilyChecks[currentFamily]:{};
+  const done=items.filter(i=>fc[i.id]).length;
+  const familyName=currentFamily===1?'현주네':'하은이네';
+  const s=document.getElementById('lastDayStatus');
+  if(done===total){s.className='status-banner status-complete';s.textContent=`${familyName} 출국 준비 완료!`;}
+  else{s.className='status-banner status-incomplete';s.textContent=`${familyName} 출국 준비 미완료 (${done}/${total})`;}
+}
+
+// ==== Transport Detail Toggle ====
+function toggleTransportDetail(id){
+  const detail=document.getElementById(id+'-detail');
+  if(detail){detail.classList.toggle('open');}
+}
+// 선택 시 토글 (같은 옵션 다시 누르면 닫힘)
+function selectTransportOption(group, id){
+  const prefix=group==='arrival'?'arr':'dep';
+  const option=document.getElementById(id);
+  const isAlreadyOpen=option&&option.classList.contains('selected');
+  // 같은 그룹 모두 닫기
+  document.querySelectorAll(`[id^="${prefix}-opt"]`).forEach(opt=>{
+    opt.classList.remove('selected');
+    const d=opt.querySelector('.transport-detail');
+    if(d)d.classList.remove('open');
+    const r=opt.querySelector('input[type=radio]');
+    if(r)r.checked=false;
+  });
+  // 이미 열려있던 걸 다시 눌렀으면 닫기만
+  if(isAlreadyOpen){saveTransfer();return;}
+  // 아니면 선택한 옵션 열기
+  if(option){
+    option.classList.add('selected');
+    const d=option.querySelector('.transport-detail');
+    if(d)d.classList.add('open');
+    const r=option.querySelector('input[type=radio]');
+    if(r)r.checked=true;
+  }
+  saveTransfer();
+}
+
+// ==== Transfer Save/Load ====
+function saveTransfer(){
+  const a=document.querySelector('input[name="arrivalTransfer"]:checked');
+  const d=document.querySelector('input[name="departureTransfer"]:checked');
+  appData.transfer.arrival=a?a.value:'';appData.transfer.departure=d?d.value:'';saveData();
+}
+function loadTransfer(){
+  if(appData.transfer.arrival){
+    const e=document.querySelector(`input[name="arrivalTransfer"][value="${appData.transfer.arrival}"]`);
+    if(e){e.checked=true;selectTransportOption('arrival',e.closest('.transport-option').id);}
+  }
+  if(appData.transfer.departure){
+    const e=document.querySelector(`input[name="departureTransfer"][value="${appData.transfer.departure}"]`);
+    if(e){e.checked=true;selectTransportOption('departure',e.closest('.transport-option').id);}
+  }
+}
+
+// ==== Planner ====
+let currentDay=1;
+function initPlanner(){
+  currentDay=appData.currentDay||1;renderDayTabs();renderRecommend('all');renderSchedule();loadDayMemo();loadDayPhotos();
+  // Init default schedule if empty
+  if(!appData._initialized){initDefaultSchedule();appData._initialized=true;saveData();renderSchedule();renderDayTabs();}
+}
+function initDefaultSchedule(){
+  if((appData.schedule[1]||[]).length>0)return;
+  appData.schedule[1]=[
+    {time:'18:00',title:'🚗 인천공항으로 이동 (2시간 전 도착)',id:1001},
+    {time:'20:50',title:'✈️ 인천공항 T1 출발 (KE737)',id:1002},
+    {time:'22:40',title:'🛬 간사이공항 도착 (KE737)',id:1003},
+    {time:'23:10',title:'🚐 공항 픽업 미팅 (트립닷컴 중형 밴)',id:1004},
+    {time:'24:00',title:'🏨 숙소 도착 (MA Masters Residence)',id:1005}
+  ];
+  appData.schedule[2]=[
+    {time:'09:00',title:'🍳 숙소 주변 아침식사',id:2001},
+    {time:'10:00',title:'🌉 도톤보리 & 심사이바시 관광',id:2002},
+    {time:'12:00',title:'🍜 점심 (도톤보리 맛집)',id:2003},
+    {time:'14:00',title:'🛍️ 신사이바시 쇼핑',id:2004},
+    {time:'17:00',title:'🦀 쿠로몬 시장 구경',id:2005},
+    {time:'19:00',title:'🌃 도톤보리 야경 & 저녁',id:2006}
+  ];
+  appData.schedule[6]=[
+    {time:'09:00',title:'🍳 아침식사 & 마지막 쇼핑',id:6001},
+    {time:'11:00',title:'🏨 숙소 체크아웃',id:6002},
+    {time:'11:30',title:'🧳 짐 보관 후 주변 관광',id:6003},
+    {time:'15:00',title:'🚃 숙소 → 고베공항 이동',id:6004},
+    {time:'16:30',title:'🛫 고베공항 도착 · 체크인',id:6005},
+    {time:'18:55',title:'✈️ 고베공항 출발 (KE1174)',id:6006},
+    {time:'20:50',title:'🛬 인천공항 도착',id:6007}
+  ];
+}
+function renderDayTabs(){
+  document.getElementById('dayTabs').innerHTML=DAY_LABELS.map((l,i)=>{
+    const d=i+1,cnt=(appData.schedule[d]||[]).length;
+    return `<button class="day-tab ${d===currentDay?'active':''}" onclick="selectDay(${d})">${l} ${cnt>0?'('+cnt+')':''}</button>`;
+  }).join('');
+  document.getElementById('currentDayLabel').textContent=DAY_LABELS[currentDay-1];
+}
+function selectDay(d){currentDay=d;appData.currentDay=d;saveData();renderDayTabs();renderSchedule();loadDayMemo();loadDayPhotos();}
+function renderRecommend(f){
+  const grid=document.getElementById('recommendGrid');
+  const items=f==='all'?recommendedSpots:recommendedSpots.filter(s=>s.cat===f);
+  grid.innerHTML=items.map(s=>`<div class="recommend-item" onclick="addRecommendToSchedule('${s.name}','${s.icon}')"><span class="r-icon">${s.icon}</span><strong>${s.name}</strong><div style="font-size:0.75em;color:var(--text-light);">${s.time}</div></div>`).join('');
+}
+function filterRecommend(c,el){document.querySelectorAll('#categoryTabs .sub-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');renderRecommend(c);}
+function addRecommendToSchedule(name,icon){
+  if(!appData.schedule[currentDay])appData.schedule[currentDay]=[];
+  appData.schedule[currentDay].push({time:'10:00',title:`${icon} ${name}`,id:Date.now()});
+  saveData();renderSchedule();renderDayTabs();
+}
+function addCustomSchedule(){
+  const time=document.getElementById('customTime').value,place=document.getElementById('customPlace').value.trim();
+  if(!place){alert('장소/활동명을 입력해주세요.');return;}
+  if(!appData.schedule[currentDay])appData.schedule[currentDay]=[];
+  appData.schedule[currentDay].push({time,title:place,id:Date.now()});
+  saveData();document.getElementById('customPlace').value='';renderSchedule();renderDayTabs();
+}
+function renderSchedule(){
+  const list=document.getElementById('scheduleList'),items=appData.schedule[currentDay]||[];
+  if(!items.length){list.innerHTML='<p style="font-size:0.85em;color:var(--text-light);text-align:center;">등록된 일정이 없습니다</p>';return;}
+  items.sort((a,b)=>a.time.localeCompare(b.time));
+  list.innerHTML=items.map(i=>`<div class="schedule-item"><span class="s-time">${i.time}</span><span class="s-title">${i.title}</span><button class="s-delete" onclick="deleteSchedule(${i.id})">✕</button></div>`).join('');
+}
+function deleteSchedule(id){appData.schedule[currentDay]=(appData.schedule[currentDay]||[]).filter(i=>i.id!==id);saveData();renderSchedule();renderDayTabs();}
+function saveDayMemo(){appData.memos[currentDay]=document.getElementById('dayMemo').value;saveData();}
+function loadDayMemo(){document.getElementById('dayMemo').value=appData.memos[currentDay]||'';}
+function handlePhotoUpload(e){
+  const files=e.target.files;if(!files.length)return;
+  if(!appData.photos[currentDay])appData.photos[currentDay]=[];
+  Array.from(files).forEach(f=>{const r=new FileReader();r.onload=function(ev){appData.photos[currentDay].push(ev.target.result);saveData();loadDayPhotos();};r.readAsDataURL(f);});
+  e.target.value='';
+}
+function loadDayPhotos(){
+  const c=document.getElementById('photoPreview'),photos=appData.photos[currentDay]||[];
+  c.innerHTML=photos.map((s,i)=>`<div class="img-container"><img src="${s}" alt="photo"><button class="remove-img" onclick="removePhoto(${i})">✕</button></div>`).join('');
+}
+function removePhoto(i){appData.photos[currentDay].splice(i,1);saveData();loadDayPhotos();}
+
+// ==== Restaurants ====
+function showArea(a,el){
+  document.querySelectorAll('.area-btn').forEach(b=>b.classList.remove('active'));if(el)el.classList.add('active');
+  const list=document.getElementById('restaurantList'),items=restaurants[a]||[];
+  list.innerHTML=items.map(r=>`<div class="restaurant-card"><div class="r-name">${r.name}</div><div class="r-type">${r.type}</div><div class="r-price">💰 ${r.price}</div><div class="r-menu">📌 ${r.menu}</div></div>`).join('');
+}
+
+// ==== Phrases ====
+function showPhraseCategory(c,el){
+  document.querySelectorAll('#phraseTabs .sub-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');
+  const list=document.getElementById('phraseList'),items=phrases[c]||[];
+  list.innerHTML=items.map(p=>`<div class="phrase-card"><div class="phrase-ko">${p.ko}</div><div class="phrase-jp">${p.jp}</div><div class="phrase-pron">🔊 ${p.pron}</div></div>`).join('');
+}
+
+// ==== VJW Step Toggle ====
+function toggleVJWStep(n){
+  const el=document.getElementById('vjw-step-'+n);
+  if(el)el.style.display=el.style.display==='none'?'block':'none';
+}
+
+// ==== Story (다이어리) ====
+let currentStoryDay=1;
+function initStory(){
+  if(!appData.diary)appData.diary={1:{},2:{},3:{},4:{},5:{},6:{}};
+  if(!appData.storyMedia)appData.storyMedia={1:[],2:[],3:[],4:[],5:[],6:[]};
+  currentStoryDay=1;
+  renderStoryDayTabs();
+  loadStoryEntry();
+}
+function renderStoryDayTabs(){
+  const c=document.getElementById('storyDayTabs');
+  c.innerHTML=DAY_LABELS.map((l,i)=>{
+    const d=i+1;const has=(appData.diary[d]&&(appData.diary[d].title||appData.diary[d].text));
+    return `<button class="day-tab ${d===currentStoryDay?'active':''}" onclick="selectStoryDay(${d})">${l}${has?' *':''}</button>`;
+  }).join('');
+}
+function selectStoryDay(d){currentStoryDay=d;renderStoryDayTabs();loadStoryEntry();}
+function loadStoryEntry(){
+  const entry=appData.diary[currentStoryDay]||{};
+  document.getElementById('storyTitle').value=entry.title||'';
+  document.getElementById('storyText').value=entry.text||'';
+  loadStoryMedia();
+}
+function saveStoryEntry(){
+  if(!appData.diary)appData.diary={1:{},2:{},3:{},4:{},5:{},6:{}};
+  appData.diary[currentStoryDay]={
+    title:document.getElementById('storyTitle').value,
+    text:document.getElementById('storyText').value
+  };
+  saveData();renderStoryDayTabs();
+}
+function handleStoryMedia(e){
+  const files=e.target.files;if(!files.length)return;
+  if(!appData.storyMedia)appData.storyMedia={1:[],2:[],3:[],4:[],5:[],6:[]};
+  if(!appData.storyMedia[currentStoryDay])appData.storyMedia[currentStoryDay]=[];
+  Array.from(files).forEach(f=>{
+    const reader=new FileReader();
+    reader.onload=function(ev){
+      appData.storyMedia[currentStoryDay].push({src:ev.target.result,type:f.type.startsWith('video')?'video':'image'});
+      saveData();loadStoryMedia();
+    };reader.readAsDataURL(f);
+  });e.target.value='';
+}
+function loadStoryMedia(){
+  const c=document.getElementById('storyMediaPreview');
+  const media=appData.storyMedia&&appData.storyMedia[currentStoryDay]?appData.storyMedia[currentStoryDay]:[];
+  c.innerHTML=media.map((m,i)=>{
+    if(m.type==='video')return `<div class="img-container"><video src="${m.src}" style="width:80px;height:80px;object-fit:cover;border-radius:8px;" controls></video><button class="remove-img" onclick="removeStoryMedia(${i})">✕</button></div>`;
+    return `<div class="img-container"><img src="${m.src}" alt="" style="width:80px;height:80px;object-fit:cover;border-radius:8px;"><button class="remove-img" onclick="removeStoryMedia(${i})">✕</button></div>`;
+  }).join('');
+}
+function removeStoryMedia(i){appData.storyMedia[currentStoryDay].splice(i,1);saveData();loadStoryMedia();}
+function showTimeline(){
+  const c=document.getElementById('storyTimeline');
+  let html='';
+  for(let d=1;d<=6;d++){
+    const entry=appData.diary&&appData.diary[d]?appData.diary[d]:{};
+    const media=appData.storyMedia&&appData.storyMedia[d]?appData.storyMedia[d]:[];
+    if(!entry.title&&!entry.text&&media.length===0)continue;
+    const dateStr=`5/${d} (${'금토일월화수'[d-1]})`;
+    html+=`<div class="story-day"><h3>Day ${d} - ${dateStr}</h3>`;
+    if(entry.title)html+=`<h4 style="color:var(--primary);margin-bottom:4px;">${entry.title}</h4>`;
+    if(entry.text)html+=`<p style="white-space:pre-wrap;">${entry.text}</p>`;
+    if(media.length>0)html+=`<div class="photo-preview" style="margin-top:8px;">`+media.map(m=>m.type==='video'?`<video src="${m.src}" style="width:80px;height:80px;object-fit:cover;border-radius:8px;" controls></video>`:`<img src="${m.src}" alt="">`).join('')+'</div>';
+    html+='</div>';
+  }
+  if(!html)html='<p style="text-align:center;color:var(--text-light);font-size:0.85em;">아직 기록이 없습니다. 각 Day별로 이야기를 작성해보세요.</p>';
+  c.innerHTML=html;
+}
+
+// ==== 참고용 자동 스토리 ====
+const storyTemplates=[
+  ['의 아침, 설레는 마음으로 ','(으)로 향했다.','에서 특별한 시간을 보냈다.'],
+  ['오늘의 하이라이트는 ','! 가족 모두 함께 즐거운 시간.','의 매력에 푹 빠진 하루.'],
+  ['드디어 ','에 도착! ','에서 잊을 수 없는 추억을 만들었다.'],
+  ['오늘은 ','을(를) 탐험하는 날.','의 풍경이 정말 아름다웠다.'],
+  ['가족과 함께 ','에서 시작한 하루.','까지 알찬 일정이었다.']
+];
+function generateStory(){
+  const output=document.getElementById('storyOutput');let hasAny=false,storyHTML='';
+  for(let day=1;day<=6;day++){
+    const items=appData.schedule[day]||[];if(!items.length)continue;hasAny=true;
+    const dateStr=`5/${day} (${'금토일월화수'[day-1]})`;
+    const tmpl=storyTemplates[(day-1)%storyTemplates.length];
+    const sorted=[...items].sort((a,b)=>a.time.localeCompare(b.time));
+    const names=sorted.map(i=>i.title.replace(/^[^\s]+ /,''));
+    let story='';
+    if(names.length===1)story=`${dateStr}${tmpl[0]}${names[0]}${tmpl[1]}`;
+    else if(names.length===2)story=`${dateStr}${tmpl[0]}${names[0]}${tmpl[1]} 이어서 ${names[1]}${tmpl[2]}`;
+    else story=`${dateStr}${tmpl[0]}${names[0]}${tmpl[1]} `+names.slice(1,-1).join(', ')+', 그리고 '+names[names.length-1]+tmpl[2];
+    const memo=appData.memos[day]||'',photos=appData.photos[day]||[];
+    storyHTML+=`<div class="story-day"><h3>📍 Day ${day} - ${dateStr}</h3><p>${story}</p>${memo?'<p style="margin-top:8px;font-style:italic;color:var(--text-light);">📝 '+memo+'</p>':''}${photos.length>0?'<div class="photo-preview" style="margin-top:8px;">'+photos.map(p=>'<img src="'+p+'" alt="">').join('')+'</div>':''}</div>`;
+  }
+  if(!hasAny){output.innerHTML='<div class="card" style="text-align:center;color:var(--text-light);">📅 먼저 일정을 등록해주세요!</div>';return;}
+  output.innerHTML=`<div class="card" style="text-align:center;margin-bottom:12px;"><h3 style="color:var(--primary);">🇯🇵 우리 가족의 오사카 이야기</h3><p style="font-size:0.82em;color:var(--text-light);">2026년 5월 1일 ~ 6일</p></div>`+storyHTML;
+}
+function exportStoryJSON(){
+  const d={title:'오사카 가족여행 2026',days:[]};
+  for(let day=1;day<=6;day++)d.days.push({day,date:`2026-05-0${day}`,schedule:appData.schedule[day]||[],memo:appData.memos[day]||'',photoCount:(appData.photos[day]||[]).length});
+  downloadJSON(d,'osaka_trip_story.json');
+}
+function copyStory(){
+  const t=document.getElementById('storyOutput').innerText;
+  navigator.clipboard.writeText(t).then(()=>alert('클립보드에 복사되었습니다!')).catch(()=>{const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);alert('클립보드에 복사되었습니다!');});
+}
+
+// ==== Hotel Memo ====
+function saveHotelMemo(){appData.hotelMemo=document.getElementById('hotelMemo').value;saveData();}
+function loadHotelMemo(){document.getElementById('hotelMemo').value=appData.hotelMemo||'';}
+function saveExtraMemo(){appData.extraMemo=document.getElementById('extraHotelMemo').value;saveData();}
+function loadExtraMemo(){document.getElementById('extraHotelMemo').value=appData.extraMemo||'';}
+
+// ==== Data Export/Import ====
+function exportData(){downloadJSON(appData,'osaka_trip_backup.json');}
+function downloadJSON(d,f){const b=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=f;a.click();URL.revokeObjectURL(u);}
+function importData(e){
+  const file=e.target.files[0];if(!file)return;
+  const r=new FileReader();r.onload=function(ev){try{const imp=JSON.parse(ev.target.result);appData={...getDefaultData(),...imp};saveData();alert('데이터를 가져왔습니다!');location.reload();}catch(err){alert('올바른 JSON 파일인지 확인해주세요.');}};
+  r.readAsText(file);e.target.value='';
+}
+
+// ==== Home Progress ====
+function updateHomeProgress(){
+  const items=appData.checkItems||[];
+  const total=items.length;
+  const fc1=appData.familyChecks[1]||{},fc2=appData.familyChecks[2]||{};
+  const done1=items.filter(i=>fc1[i.id]).length,done2=items.filter(i=>fc2[i.id]).length;
+  const pct1=total?Math.round(done1/total*100):0,pct2=total?Math.round(done2/total*100):0;
+  document.getElementById('homeCheck1Rate').textContent=done1+'/'+total+' ('+pct1+'%)';
+  document.getElementById('homeCheck1Bar').style.width=pct1+'%';
+  document.getElementById('homeCheck2Rate').textContent=done2+'/'+total+' ('+pct2+'%)';
+  document.getElementById('homeCheck2Bar').style.width=pct2+'%';
+  let dws=0;for(let d=1;d<=6;d++)if((appData.schedule[d]||[]).length>0)dws++;
+  document.getElementById('homePlanRate').textContent=dws+'일/6일';
+  document.getElementById('homePlanBar').style.width=Math.round(dws/6*100)+'%';
+}
+
+// ==== Init ====
+function init(){
+  updateDday();
+  currentFamily=appData.currentFamily||1;
+  switchFamily(currentFamily);
+  loadTransfer();initPlanner();
+  showArea('dotonbori',document.querySelector('.area-btn'));
+  showPhraseCategory('greet',document.querySelector('#phraseTabs .sub-tab'));
+  loadHotelMemo();loadExtraMemo();updateHomeProgress();
+}
+init();
+</script>
+</body>
+</html>
